@@ -58,7 +58,6 @@ const RecoveryPassword = () => {
             }}
             onClick={() =>
               toast.success("you can change your password", {
-                autoClose: 1000,
                 closeOnClick: true,
               })
             }

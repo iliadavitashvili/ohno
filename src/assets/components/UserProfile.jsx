@@ -58,7 +58,6 @@ const UserProfile = ({ setShowMenu }) => {
             setShowUserProfile((prev) => !prev);
             setShowMenu((prev) => !prev);
             toast.success("Logged out", {
-              autoClose: 1000,
               closeOnClick: true,
             });
             navigate("/");
