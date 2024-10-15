@@ -4,7 +4,13 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const HomeLayoutContext = createContext();
 const HomeLayout = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user")) || {
+      name: "",
+      email: "",
+      password: "",
+    }
+  );
   const [ShowUserProfile, setShowUserProfile] = useState(false);
   useEffect(() => {
     // Function to update the user state when the custom event is triggered

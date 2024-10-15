@@ -43,7 +43,10 @@ export const action = async ({ request }) => {
   data.name = user.name;
   localStorage.setItem("user", JSON.stringify(data));
   window.dispatchEvent(new Event("userUpdated"));
-  toast.success("Login successful");
+  toast.success("Login successful", {
+    autoClose: 1000,
+    closeOnClick: true,
+  });
 
   return redirect("/");
 };

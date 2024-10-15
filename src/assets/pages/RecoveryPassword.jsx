@@ -56,7 +56,12 @@ const RecoveryPassword = () => {
             style={{
               backgroundColor: !validateEmail(user.email, email) && "gray",
             }}
-            onClick={() => toast.success("you can change your password")}
+            onClick={() =>
+              toast.success("you can change your password", {
+                autoClose: 1000,
+                closeOnClick: true,
+              })
+            }
           />
         </Link>
       </Form>

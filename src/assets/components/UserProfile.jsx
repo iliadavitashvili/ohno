@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const UserProfile = () => {
+const UserProfile = ({ setShowMenu }) => {
   const { user, setShowUserProfile } = useHomeLayoutContext();
   const navigate = useNavigate();
   return (
@@ -56,7 +56,11 @@ const UserProfile = () => {
             localStorage.removeItem("lang");
             window.dispatchEvent(new Event("userUpdated"));
             setShowUserProfile((prev) => !prev);
-            toast.success("Logged out");
+            setShowMenu((prev) => !prev);
+            toast.success("Logged out", {
+              autoClose: 1000,
+              closeOnClick: true,
+            });
             navigate("/");
           }}
         >

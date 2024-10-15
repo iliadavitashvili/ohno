@@ -96,7 +96,7 @@ const Wrapper = styled.header`
   }
 `;
 const MobileHeader = () => {
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
   const { lang, setLang, user, setUser, ShowUserProfile, setShowUserProfile } =
     useHomeLayoutContext();
   // const [ShowUserProfile, setShowUserProfile = useState(false);
@@ -154,7 +154,9 @@ const MobileHeader = () => {
                     >
                       {user.name}
                     </li>
-                    {ShowUserProfile && <UserProfile />}
+                    {ShowUserProfile && (
+                      <UserProfile setShowMenu={setShowMenu} />
+                    )}
                   </>
                 ) : (
                   <li

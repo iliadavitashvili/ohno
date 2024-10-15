@@ -20,7 +20,10 @@ export const action = async ({ request }) => {
   console.log(password, "password", user);
   localStorage.setItem("user", JSON.stringify(user));
   window.dispatchEvent(new Event("userUpdated"));
-  toast.success("Password changed successfully");
+  toast.success("Password changed successfully", {
+    autoClose: 1000,
+    closeOnClick: true,
+  });
   return redirect("/login");
 };
 const ConfirmPassword = () => {
