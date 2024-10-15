@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  redirect,
+  RouterProvider,
+} from "react-router-dom";
 import "./App.css";
 import {
   HomeLayout,
@@ -12,7 +16,8 @@ import {
 import { action as registerAction } from "./assets/pages/Register";
 import { action as loginAction } from "./assets/pages/Login";
 import { action as confirmPasswordAction } from "./assets/pages/ConfirmPassword";
-import { HomeContainer } from "./assets/components";
+import { DesktopHeader, HomeContainer } from "./assets/components";
+import ErrorEl from "./assets/components/ErrorEl";
 // import Contact from "./assets/pages";
 
 function App() {
@@ -20,6 +25,8 @@ function App() {
     {
       path: "/",
       element: <HomeLayout />,
+      errorElement: <ErrorEl />,
+
       children: [
         { index: true, element: <HomeContainer /> },
         { path: "/register", element: <Register />, action: registerAction },
