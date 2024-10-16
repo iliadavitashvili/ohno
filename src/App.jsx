@@ -16,8 +16,10 @@ import {
 import { action as registerAction } from "./assets/pages/Register";
 import { action as loginAction } from "./assets/pages/Login";
 import { action as confirmPasswordAction } from "./assets/pages/ConfirmPassword";
+
 import { DesktopHeader, HomeContainer } from "./assets/components";
 import ErrorEl from "./assets/components/ErrorEl";
+
 // import Contact from "./assets/pages";
 
 function App() {

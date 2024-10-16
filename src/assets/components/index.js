@@ -8,3 +8,4 @@ export { default as GoogleLogo } from "./GoogleLogo";
 export { default as FormRow } from "./FormRow";
 export { default as SubmitBtn } from "./SubmitBtn";
 export { default as UserProfile } from "./UserProfile";
+export { default as Footer } from "./Footer";

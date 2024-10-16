@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { DesktopHeader, MobileHeader } from "../components";
+import { DesktopHeader, Footer, MobileHeader } from "../components";
 import { createContext, useContext, useEffect, useState } from "react";
 
 const HomeLayoutContext = createContext();
@@ -46,6 +46,7 @@ const HomeLayout = () => {
       <DesktopHeader />
       <MobileHeader />
       <Outlet />
+      <Footer />
     </HomeLayoutContext.Provider>
   );
 };

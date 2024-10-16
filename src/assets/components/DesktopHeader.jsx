@@ -3,7 +3,7 @@ import logo from "../images/headerImages/Group.png";
 import JoinCommunity from "./JoinCommunity";
 import { useEffect, useState } from "react";
 import { useHomeLayoutContext } from "../pages/HomeLayout";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import UserProfile from "./UserProfile";
 const Wrapper = styled.header`
   user-select: none;
@@ -30,7 +30,7 @@ const Wrapper = styled.header`
     color: #103559;
     font-size: 0.7rem;
   }
-  .header-logo-container {
+  .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,15 +79,21 @@ const DesktopHeader = () => {
     <Wrapper>
       <nav>
         <ul className="left-hand">
-          <div className="header-logo-container">
+          <div className="logo-container">
             <img src={logo} />
             <span className="header-logo-under-text">Pets for Best</span>
           </div>
-          <li onClick={() => navigate("/")}>
-            {isLanguageEnglish ? "Home" : "კატეგორია"}
+          <li>
+            <NavLink to={"/"} activeClassName="active">
+              {isLanguageEnglish ? "Home" : "კატეგორია"}
+            </NavLink>
           </li>
           <li>{isLanguageEnglish ? "Category" : "კატეგორია"}</li>
-          <li>{isLanguageEnglish ? "Contact" : "კონტაქტი"}</li>
+          <li>
+            <NavLink to={"/contact"} activeClassName="active">
+              <li>{isLanguageEnglish ? "Contact" : "კონტაქტი"}</li>
+            </NavLink>
+          </li>
         </ul>
         <ul>
           {user?.login ? (

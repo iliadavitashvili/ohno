@@ -1,0 +1,14 @@
+* {
+  overflow-x: hidden;
+}
+
+nav a {
+  text-decoration: none;
+  color: #01263f;
+}
+.active {
+  font-weight: bolder;
+  color: #003459;
+  text-decoration: unset;
+  text-decoration: underline;
+}
