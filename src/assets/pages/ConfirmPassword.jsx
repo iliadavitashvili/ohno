@@ -58,7 +58,7 @@ const ConfirmPassword = () => {
           placeholder={"password should be more than 3 character"}
           style={{
             border:
-              changePassword.password.length < 3 &&
+              changePassword.password.length < 4 &&
               changePassword.password != "" &&
               " 2px solid red",
             outline: "none",

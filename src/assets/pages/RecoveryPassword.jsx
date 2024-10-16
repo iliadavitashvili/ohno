@@ -24,7 +24,7 @@ const RecoveryPassword = () => {
     setEmail(e.target.value);
   }
   function validateEmail(input1, input2) {
-    if (input1 === input2) {
+    if (input1 === input2 && email != "") {
       return true;
     }
     return false;
@@ -38,6 +38,7 @@ const RecoveryPassword = () => {
           promptly send you a link to reset your password.
         </p>
         <FormRow
+          placeholder="enter registered email"
           type={"email"}
           name={"email"}
           onChange={handleChangeEmail}
