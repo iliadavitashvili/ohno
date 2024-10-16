@@ -34,6 +34,7 @@ const Wrapper = styled.header`
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
   }
   .left-hand li {
     color: #003459;
@@ -66,7 +67,7 @@ const DesktopHeader = () => {
     useHomeLayoutContext();
   // const [ShowUserProfile, setShowUserProfile = useState(false);
   const isLanguageEnglish = lang === "ENG";
-  console.log(user, "changeed");
+  // console.log(user, "changeed");
 
   const languageChange = () => {
     setLang((prev) => (prev === "ENG" ? "GEO" : "ENG"));
@@ -79,7 +80,7 @@ const DesktopHeader = () => {
     <Wrapper>
       <nav>
         <ul className="left-hand">
-          <div className="logo-container">
+          <div className="logo-container" onClick={() => navigate("/")}>
             <img src={logo} />
             <span className="header-logo-under-text">Pets for Best</span>
           </div>

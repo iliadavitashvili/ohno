@@ -15,6 +15,7 @@ import {
 } from "./assets/pages";
 import { action as registerAction } from "./assets/pages/Register";
 import { action as loginAction } from "./assets/pages/Login";
+import { action as contactAction } from "./assets/pages/Contact";
 import { action as confirmPasswordAction } from "./assets/pages/ConfirmPassword";
 
 import { DesktopHeader, HomeContainer } from "./assets/components";
@@ -27,7 +28,7 @@ function App() {
     {
       path: "/",
       element: <HomeLayout />,
-      errorElement: <ErrorEl />,
+      // errorElement: <ErrorEl />,
 
       children: [
         { index: true, element: <HomeContainer /> },
@@ -39,7 +40,7 @@ function App() {
           element: <ConfirmPassword />,
           action: confirmPasswordAction,
         },
-        { path: "/contact", element: <Contact /> },
+        { path: "/contact", element: <Contact />, action: contactAction },
       ],
     },
   ]);

@@ -101,7 +101,7 @@ const MobileHeader = () => {
     useHomeLayoutContext();
   // const [ShowUserProfile, setShowUserProfile = useState(false);
   const isLanguageEnglish = lang === "ENG";
-  console.log(user, "changeed");
+  // console.log(user, "changeed");
 
   const languageChange = () => {
     setLang((prev) => (prev === "ENG" ? "GEO" : "ENG"));

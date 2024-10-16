@@ -2,11 +2,11 @@ import styled from "styled-components";
 import gLogo from "../images/google.png";
 const Wrapper = styled.div`
   width: 320px;
-  height: 44px;
+  /* height: 44px; */
   .gLogo-wrapper {
     display: flex;
-    width: 320px;
-    height: 44px;
+    min-width: 320px;
+    min-height: 44px;
     border: 1px solid gray;
     border-radius: 3px;
     justify-content: center;

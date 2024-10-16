@@ -6,7 +6,7 @@ import twitterLogo from "../images/socIcons/twitter.png";
 import instagramLogo from "../images/socIcons/instagram.png";
 import youtubeLogo from "../images/socIcons/youtube.png";
 import logo from "../images/headerImages/Group.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 const Wrapper = styled.footer`
   width: 100vw;
   height: 440px;
@@ -95,6 +95,7 @@ const Wrapper = styled.footer`
   }
   #logo-container-nav {
     display: flex;
+    cursor: pointer;
 
     flex-direction: column;
     justify-content: center;
@@ -121,6 +122,7 @@ const Wrapper = styled.footer`
     padding: 0 20px;
   }
   @media (max-width: 1000px) {
+    padding: 20px 0;
     height: auto;
     .copy {
       flex-direction: column;
@@ -128,6 +130,7 @@ const Wrapper = styled.footer`
     }
     #logo-container-nav {
       order: -2;
+      cursor: pointer;
     }
     .terms {
       order: -1;
@@ -174,6 +177,7 @@ const Wrapper = styled.footer`
 `;
 
 const Footer = () => {
+  const navigate = useNavigate();
   function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -208,7 +212,7 @@ const Footer = () => {
             placeholder="Enter your email"
           />
           {!validateEmail(email) && email != "" && (
-            <span>Enter valid Email</span>
+            <span style={{ color: "red" }}>Enter valid Email</span>
           )}
           <button
             type="button"
@@ -252,7 +256,7 @@ const Footer = () => {
       </div>
       <div className="copy">
         <p>© 2022 Monito. All rights reserved.</p>
-        <div id="logo-container-nav">
+        <div id="logo-container-nav" onClick={() => navigate("/")}>
           <img src={logo} />
           <span className="header-logo-under-text">Pets for Best</span>
         </div>
