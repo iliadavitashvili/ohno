@@ -113,7 +113,7 @@ const MobileHeader = () => {
   return (
     <Wrapper>
       <nav>
-        <div className="header-logo-container">
+        <div className="header-logo-container" onClick={() => navigate("/")}>
           <img src={logo} />
           <span className="header-logo-under-text">Pets for Best</span>
         </div>
