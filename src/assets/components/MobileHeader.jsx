@@ -134,7 +134,14 @@ const MobileHeader = () => {
                 >
                   {isLanguageEnglish ? "Home" : "მთავარი"}
                 </li>
-                <li>{isLanguageEnglish ? "Category" : "კატეგორია"}</li>
+                <li
+                  onClick={() => {
+                    setShowMenu(false);
+                    navigate("/category/1");
+                  }}
+                >
+                  {isLanguageEnglish ? "Category" : "კატეგორია"}
+                </li>
                 <li
                   onClick={() => {
                     setShowMenu(false);

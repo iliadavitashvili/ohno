@@ -12,6 +12,8 @@ import {
   Register,
   Login,
   Contact,
+  Category,
+  Dog,
 } from "./assets/pages";
 import { action as registerAction } from "./assets/pages/Register";
 import { action as loginAction } from "./assets/pages/Login";
@@ -41,6 +43,8 @@ function App() {
           action: confirmPasswordAction,
         },
         { path: "/contact", element: <Contact />, action: contactAction },
+        { path: "/category/:page", element: <Category /> },
+        { path: "/:skuId", element: <Dog /> },
       ],
     },
   ]);

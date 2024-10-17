@@ -22,7 +22,7 @@ const Wrapper = styled.header`
     justify-content: center;
     align-items: center;
   }
-  nav ul li {
+  nav ul a {
     list-style-type: none;
     margin-left: 5vw;
   }
@@ -36,7 +36,7 @@ const Wrapper = styled.header`
     align-items: center;
     cursor: pointer;
   }
-  .left-hand li {
+  .left-hand a {
     color: #003459;
   }
   .join-the-community {
@@ -84,17 +84,18 @@ const DesktopHeader = () => {
             <img src={logo} />
             <span className="header-logo-under-text">Pets for Best</span>
           </div>
-          <li>
-            <NavLink to={"/"} activeClassName="active">
-              {isLanguageEnglish ? "Home" : "კატეგორია"}
-            </NavLink>
-          </li>
-          <li>{isLanguageEnglish ? "Category" : "კატეგორია"}</li>
-          <li>
-            <NavLink to={"/contact"} activeClassName="active">
-              <li>{isLanguageEnglish ? "Contact" : "კონტაქტი"}</li>
-            </NavLink>
-          </li>
+
+          <NavLink to={"/"} activeclassname="active">
+            {isLanguageEnglish ? "Home" : "კატეგორია"}
+          </NavLink>
+
+          <NavLink to={"/category/1"} activeclassname="active">
+            {isLanguageEnglish ? "Category" : "კატეგორია"}
+          </NavLink>
+
+          <NavLink to={"/contact"} activeclassname="active">
+            <li>{isLanguageEnglish ? "Contact" : "კონტაქტი"}</li>
+          </NavLink>
         </ul>
         <ul>
           {user?.login ? (

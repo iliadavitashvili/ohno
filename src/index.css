@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  max-width: 1440px;
 }
 li {
   list-style-type: none;
@@ -13,4 +14,7 @@ nav a {
   color: #003459;
   text-decoration: unset;
   text-decoration: underline;
+}
+label {
+  user-select: none;
 }
