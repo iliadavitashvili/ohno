@@ -207,14 +207,14 @@ const Category = () => {
   const { page } = useParams();
   const navigate = useNavigate();
 
-  const pageSize = isMobileFilter ? 15 : 20;
+  const pageSize = 18;
   const startIndex = (page - 1) * pageSize;
   const endIndex = startIndex + pageSize;
 
   const [currentDogs, setCurrentDogs] = useState([]);
 
   const lastPage = Math.ceil(
-    filteredDogs.length / pageSize || dogs.length / pageSize
+    filteredDogs.length / pageSize || currentDogs.length / pageSize
   );
 
   useEffect(() => {
@@ -297,7 +297,7 @@ const Category = () => {
                 setIsMobileFilter((prev) => !prev);
               }}
               style={{
-                position: isMobileFilter && "absolute",
+                position: "absolute",
                 right: "30px",
                 top: "10px",
                 scale: "1.7",
