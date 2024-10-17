@@ -7,6 +7,10 @@ import { useEffect } from "react";
 import leftArrow from "../images/leftArrow.png";
 import rightArrow from "../images/rightArrow.png";
 import filterIcon from "../images/filterIcon.png";
+import categoryImage from "../images/category/categoryImage.png";
+import categoryImageMobile from "../images/category/categoryImageMobile.png";
+import bgImage from "../images/category/bgImage.png";
+import CustomButton from "../components/CustomButton.jsx";
 const Wrapper = styled.section`
   max-width: 1440px;
   background-color: #ebeeef;
@@ -151,6 +155,7 @@ const Wrapper = styled.section`
       position: fixed;
       width: 70vw;
       left: 15px;
+      top: 15%;
     }
     .dogs-wrapper {
       width: 100%;
@@ -158,7 +163,7 @@ const Wrapper = styled.section`
       grid-gap: 20px;
       grid-template-columns: repeat(2, 185px);
       grid-template-rows: minmax(100px, auto);
-      justify-content: start;
+      justify-content: space-evenly;
     }
     .dogs-container {
       width: 100vw;
@@ -183,7 +188,85 @@ const Wrapper = styled.section`
     }
   }
 `;
+const Section = styled.section`
+  background-color: #fceed5;
+  display: flex;
+  padding: 0 100px;
+  border-radius: 20px;
+  max-width: 1440px;
+  background-image: url(${bgImage});
+  background-position: 90% 0%;
+  background-repeat: no-repeat;
+  justify-content: center;
+  h1,
+  h2,
+  p {
+    color: #fdfdfd;
+    font-weight: bold;
+    font-family: sans-serif;
+    align-self: flex-end;
+  }
+  h1 {
+    font-size: 54px;
+    margin: 0;
+  }
+  h2 {
+    font-size: 36px;
+  }
 
+  .text-wrapper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 1000px) {
+    h1,
+    h2,
+    p {
+      color: rgb(0, 52, 89);
+      font-weight: bold;
+      /* text-align: left; */
+      align-self: flex-start;
+      padding: 10px;
+    }
+    h1 {
+      font-size: 42px;
+    }
+    h2 {
+      font-size: 26px;
+      margin: 0;
+    }
+    p {
+      font-size: 12px;
+      padding: 10px;
+      color: #242b33;
+    }
+    text-align: right;
+
+    width: 100vw;
+    display: flex;
+    padding: 0;
+    flex-direction: column-reverse;
+    background-image: url(${bgImage});
+    background-position: 10% 300%;
+    background-repeat: no-repeat;
+    .text-wrapper {
+      width: 100vw;
+      padding: 0;
+      text-align: left;
+      justify-content: center;
+    }
+    .buttons-wrapper {
+      justify-content: center;
+    }
+  }
+`;
 const Category = () => {
   // console.log();
   const [isMobileFilter, setIsMobileFilter] = useState(
@@ -287,263 +370,295 @@ const Category = () => {
       setCurrentDogs(dogs.slice(startIndex, endIndex));
   }
   return (
-    <Wrapper>
-      {isMobileFilter && (
-        <div className="filter">
-          {isMobileFilter && (
-            <h1
-              className="closing-filter"
-              onClick={() => {
-                setIsMobileFilter((prev) => !prev);
-              }}
-              style={{
-                position: "absolute",
-                right: "30px",
-                top: "10px",
-                scale: "1.7",
-                color: "black",
-              }}
-            >
-              X
-            </h1>
-          )}
-          <h2>Filter</h2>
-          <form>
-            <p className="filter-names">Gender</p>
-            <p>
-              <input
-                onChange={onFilterChange}
-                type="checkbox"
-                value={"male"}
-                id="male"
-                checked={filterData.gender.male}
-                className="gender"
-              />
-              <label htmlFor="male">Male</label>
-            </p>
-            <p>
-              <input
-                onChange={onFilterChange}
-                checked={filterData.gender.female}
-                type="checkbox"
-                value={"female"}
-                id="female"
-                className="gender"
-              />
-              <label htmlFor="female">Female</label>
-            </p>
-            <hr />
-            <p className="filter-names">Color</p>
-            <p>
-              <input
-                checked={filterData.color.white}
-                onChange={onFilterChange}
-                type="checkbox"
-                value={"white"}
-                id="white"
-                className="color"
-              />
-              <label htmlFor="white">White</label>
-            </p>
-            <p>
-              <input
-                checked={filterData.color.gray}
-                onChange={onFilterChange}
-                type="checkbox"
-                value={"gray"}
-                id="gray"
-                className="color"
-              />
-              <label htmlFor="gray">Gray</label>
-            </p>
-            <p>
-              <input
-                checked={filterData.color.black}
-                onChange={onFilterChange}
-                type="checkbox"
-                value={"black"}
-                id="black"
-                className="color"
-              />
-              <label htmlFor="black">Black</label>
-            </p>
-            <p>
-              <input
-                checked={filterData.color["black&white"]}
-                onChange={onFilterChange}
-                type="checkbox"
-                value={"black & white"}
-                style={{ whiteSpace: "wrap" }}
-                id="black&white"
-                className="color"
-              />{" "}
-              <label htmlFor="black&white">Black & White</label>
-            </p>
-            <p>
-              <input
-                checked={filterData.color.brown}
-                onChange={onFilterChange}
-                type="checkbox"
-                value={"brown"}
-                id="brown"
-                className="color"
-              />
-              <label htmlFor="brown">Brown</label>
-            </p>
-            <p>
-              <input
-                checked={filterData.color["black & tan"]}
-                onChange={onFilterChange}
-                type="checkbox"
-                value={"Black & Tan"}
-                id="Black & Tan"
-                className="color"
-              />
-              <label htmlFor="Black & Tan">Black & Tan</label>
-            </p>
-            <hr />
-            <p className="filter-names">Price</p>
-            <div className="price-inputs-div">
-              <input
-                //   onChange={onFilterChange}
-                className="price-input"
-                type="number"
-                placeholder="MIN"
-                min={400}
-              />
-              <input
-                //   onChange={onFilterChange}
-                className="price-input"
-                type="number"
-                placeholder="MAX"
-                min={"500"}
-              />
-            </div>
-            <hr />
-            <p className="filter-names">Breed</p>
-            <p>
-              <input
-                onChange={onFilterChange}
-                type="checkbox"
-                value={"small"}
-                id="small"
-                checked={filterData.breed.small}
-                className="breed"
-              />
-              <label htmlFor="small">Small</label>
-            </p>
-            <p>
-              <input
-                checked={filterData.breed.medium}
-                onChange={onFilterChange}
-                type="checkbox"
-                value={"medium"}
-                id="medium"
-                className="breed"
-              />
-              <label htmlFor="medium">Medium</label>
-            </p>
-            <p>
-              <input
-                onChange={onFilterChange}
-                checked={filterData.breed.large}
-                type="checkbox"
-                value={"big"}
-                id="big"
-                className="breed"
-              />
-              <label htmlFor="big">Big</label>
-            </p>
-          </form>{" "}
-        </div>
-      )}
-
-      <div className="dogs-container">
-        <div className="dogs-count">
-          <div className="dogs-counter-wrapper">
-            <h2>
-              Dogs:{" "}
-              {filteredDogs.length !== 0 ? filteredDogs.length : dogs.length}
-            </h2>
-            <select
-              onChange={(e) => {
-                const sortOrder = e.target.value;
-                if (sortOrder === "A-Z") {
-                  setCurrentDogs(
-                    [...currentDogs].sort((a, b) =>
-                      a.breed.localeCompare(b.breed)
-                    )
-                  );
-                } else if (sortOrder === "Z-A") {
-                  setCurrentDogs(
-                    [...currentDogs].sort((a, b) =>
-                      b.breed.localeCompare(a.breed)
-                    )
-                  );
-                } else if (sortOrder === "initial") {
-                  setCurrentDogs(currentDogs);
-                }
-              }}
-            >
-              <option value={"initial"}>Sort by: Popular</option>
-              <option value={"A-Z"}>A-Z</option>
-              <option value={"Z-A"}>Z-A</option>
-            </select>
-          </div>
-          <div
-            className="filter-icon-wrapper"
-            onClick={() => setIsMobileFilter((prev) => !prev)}
-          >
-            <img src={filterIcon} alt="filter-icon" className="filter-icon" />
-            <p>Filter</p>
-          </div>
-        </div>
-        <div className="dogs-wrapper">
-          {currentDogs?.map((dog) => (
-            <DogWrapper
-              className="smalls"
-              key={dog.sku}
-              id={dog.sku}
-              dog={dog}
-              onClick={() => dogLink(dog.sku)}
+    <>
+      <Section className="image-section">
+        {window.innerWidth >= 1000 && (
+          <img src={categoryImage} alt="happy dogs" />
+        )}
+        {window.innerWidth < 1000 && (
+          <img src={categoryImageMobile} alt="happy dogs" />
+        )}
+        <div className="text-wrapper">
+          <h1>One more friend</h1>
+          <h2>Thousands more fun!</h2>
+          <p>
+            Having a pet means you have more joy, a new friend, a happy person
+            who will always be with you to have fun. We have 200+ different pets
+            that can meet your needs!
+          </p>
+          <div className="buttons-wrapper">
+            <CustomButton
+              icon={"play"}
+              text="View Intro"
+              transparent={(window.innerWidth < 1000) & true}
             />
-          ))}
+            <CustomButton text="Explore Now" id="secButton" />
+          </div>
         </div>
-        <div className="buttons-wrapper">
-          {lastPage > 1 && (
-            <>
-              <img
-                className="page-arrows"
-                id="page-arrows"
-                src={leftArrow}
-                alt="left direction arrow for page"
-                onClick={() => handlePageChange(Math.max(page - 1, 1))}
-              />
+      </Section>
 
-              {buttonsCount.map((_, index) => (
-                <button
-                  style={{ border: page == index + 1 && "3px solid lime" }}
-                  className="pagination-buttons"
-                  key={index}
-                  onClick={() => handlePageChange(index + 1)}
-                >
-                  {index + 1}
-                </button>
-              ))}
-              <img
-                src={rightArrow}
-                className="page-arrows"
-                id="page-arrows"
-                alt="right direction arrow for page"
-                onClick={() =>
-                  handlePageChange(Math.min(Number(page) + 1, lastPage))
-                }
+      <Wrapper>
+        {isMobileFilter && (
+          <div className="filter">
+            {isMobileFilter && (
+              <h1
+                className="closing-filter"
+                onClick={() => {
+                  setIsMobileFilter((prev) => !prev);
+                }}
+                style={{
+                  position: "absolute",
+                  right: "30px",
+                  top: "10px",
+                  scale: "1.7",
+                  color: "black",
+                }}
+              >
+                X
+              </h1>
+            )}
+            <h2>Filter</h2>
+            <form>
+              <p className="filter-names">Gender</p>
+              <p>
+                <input
+                  onChange={onFilterChange}
+                  type="checkbox"
+                  value={"male"}
+                  id="male"
+                  checked={filterData.gender.male}
+                  className="gender"
+                />
+                <label htmlFor="male">Male</label>
+              </p>
+              <p>
+                <input
+                  onChange={onFilterChange}
+                  checked={filterData.gender.female}
+                  type="checkbox"
+                  value={"female"}
+                  id="female"
+                  className="gender"
+                />
+                <label htmlFor="female">Female</label>
+              </p>
+              <hr />
+              <p className="filter-names">Color</p>
+              <p>
+                <input
+                  checked={filterData.color.white}
+                  onChange={onFilterChange}
+                  type="checkbox"
+                  value={"white"}
+                  id="white"
+                  className="color"
+                />
+                <label htmlFor="white">White</label>
+              </p>
+              <p>
+                <input
+                  checked={filterData.color.gray}
+                  onChange={onFilterChange}
+                  type="checkbox"
+                  value={"gray"}
+                  id="gray"
+                  className="color"
+                />
+                <label htmlFor="gray">Gray</label>
+              </p>
+              <p>
+                <input
+                  checked={filterData.color.black}
+                  onChange={onFilterChange}
+                  type="checkbox"
+                  value={"black"}
+                  id="black"
+                  className="color"
+                />
+                <label htmlFor="black">Black</label>
+              </p>
+              <p>
+                <input
+                  checked={filterData.color["black&white"]}
+                  onChange={onFilterChange}
+                  type="checkbox"
+                  value={"black & white"}
+                  style={{ whiteSpace: "wrap" }}
+                  id="black&white"
+                  className="color"
+                />{" "}
+                <label htmlFor="black&white">Black & White</label>
+              </p>
+              <p>
+                <input
+                  checked={filterData.color.brown}
+                  onChange={onFilterChange}
+                  type="checkbox"
+                  value={"brown"}
+                  id="brown"
+                  className="color"
+                />
+                <label htmlFor="brown">Brown</label>
+              </p>
+              <p>
+                <input
+                  checked={filterData.color["black & tan"]}
+                  onChange={onFilterChange}
+                  type="checkbox"
+                  value={"Black & Tan"}
+                  id="Black & Tan"
+                  className="color"
+                />
+                <label htmlFor="Black & Tan">Black & Tan</label>
+              </p>
+              <hr />
+              <p className="filter-names">Price</p>
+              <div className="price-inputs-div">
+                <input
+                  //   onChange={onFilterChange}
+                  className="price-input"
+                  type="number"
+                  placeholder="MIN"
+                  min={400}
+                />
+                <input
+                  //   onChange={onFilterChange}
+                  className="price-input"
+                  type="number"
+                  placeholder="MAX"
+                  min={"500"}
+                />
+              </div>
+              <hr />
+              <p className="filter-names">Breed</p>
+              <p>
+                <input
+                  onChange={onFilterChange}
+                  type="checkbox"
+                  value={"small"}
+                  id="small"
+                  checked={filterData.breed.small}
+                  className="breed"
+                />
+                <label htmlFor="small">Small</label>
+              </p>
+              <p>
+                <input
+                  checked={filterData.breed.medium}
+                  onChange={onFilterChange}
+                  type="checkbox"
+                  value={"medium"}
+                  id="medium"
+                  className="breed"
+                />
+                <label htmlFor="medium">Medium</label>
+              </p>
+              <p>
+                <input
+                  onChange={onFilterChange}
+                  checked={filterData.breed.large}
+                  type="checkbox"
+                  value={"big"}
+                  id="big"
+                  className="breed"
+                />
+                <label htmlFor="big">Big</label>
+              </p>
+            </form>{" "}
+          </div>
+        )}
+
+        <div className="dogs-container">
+          <div className="dogs-count">
+            <div className="dogs-counter-wrapper">
+              <h2>
+                Dogs:{" "}
+                {filteredDogs.length !== 0 ? filteredDogs.length : dogs.length}
+              </h2>
+              <select
+                onChange={(e) => {
+                  const sortOrder = e.target.value;
+                  if (sortOrder === "A-Z") {
+                    setCurrentDogs(
+                      [...currentDogs].sort((a, b) =>
+                        a.breed.localeCompare(b.breed)
+                      )
+                    );
+                  } else if (sortOrder === "Z-A") {
+                    setCurrentDogs(
+                      [...currentDogs].sort((a, b) =>
+                        b.breed.localeCompare(a.breed)
+                      )
+                    );
+                  } else if (sortOrder === "initial") {
+                    setCurrentDogs(currentDogs);
+                  }
+                }}
+              >
+                <option value={"initial"}>Sort by: Popular</option>
+                <option value={"A-Z"}>A-Z</option>
+                <option value={"Z-A"}>Z-A</option>
+              </select>
+            </div>
+            <div
+              className="filter-icon-wrapper"
+              onClick={() => setIsMobileFilter((prev) => !prev)}
+            >
+              <img src={filterIcon} alt="filter-icon" className="filter-icon" />
+              <p>Filter</p>
+            </div>
+          </div>
+          <div className="dogs-wrapper">
+            {currentDogs?.map((dog) => (
+              <DogWrapper
+                className="smalls"
+                key={dog.sku}
+                id={dog.sku}
+                dog={dog}
+                onClick={() => dogLink(dog.sku)}
               />
-            </>
-          )}
+            ))}
+          </div>
+          <div className="buttons-wrapper">
+            {lastPage > 1 && (
+              <>
+                {Number(page) - 1 !== 0 && (
+                  <img
+                    className="page-arrows"
+                    id="page-arrows"
+                    src={leftArrow}
+                    alt="left direction arrow for page"
+                    onClick={() => handlePageChange(Math.max(page - 1, 1))}
+                  />
+                )}
+
+                {buttonsCount.map((_, index) => (
+                  <button
+                    style={{ border: page == index + 1 && "3px solid lime" }}
+                    className="pagination-buttons"
+                    key={index}
+                    onClick={() => handlePageChange(index + 1)}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+                {lastPage > page && (
+                  <img
+                    src={rightArrow}
+                    className="page-arrows"
+                    id="page-arrows"
+                    alt="right direction arrow for page"
+                    onClick={() =>
+                      handlePageChange(Math.min(Number(page) + 1, lastPage))
+                    }
+                  />
+                )}
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 };
 export default Category;

@@ -4,7 +4,7 @@ import messageIcon from "../images/buttonIcons/message.png";
 
 const CustomButton = ({
   text,
-  //   color = "#003459",
+  color = "#003459",
   bgcolor = "transparent",
   icon,
   children,
@@ -12,6 +12,7 @@ const CustomButton = ({
   ...rest
 }) => {
   let styles = {
+    margin: "5px",
     color: transparent ? "#003459" : "white",
     fontSize: "14px",
     fontWeight: "bolder",
@@ -32,6 +33,8 @@ const CustomButton = ({
     margin: "0 10px",
     border: icon === "play" && "2px solid white",
     borderRadius: icon === "play" && "50%",
+    fill: "red",
+    d: "M12,2L2,12L12,22L22,12L12,2z",
   };
   let image = "";
   if (icon === "arrow") {

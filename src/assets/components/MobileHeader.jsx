@@ -3,7 +3,7 @@ import logo from "../images/headerImages/Group.png";
 import JoinCommunity from "./JoinCommunity";
 import { useEffect, useState } from "react";
 import { useHomeLayoutContext } from "../pages/HomeLayout";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import UserProfile from "./UserProfile";
 import hamburger from "../images/hamburger.png";
 const Wrapper = styled.header`
