@@ -26,7 +26,13 @@ const Wrapper = styled.section`
   }
   .page-arrows {
     width: 15px;
-    padding: 20px;
+    padding: 15px;
+    cursor: pointer;
+  }
+  .page-arrows:hover {
+    background-color: white;
+
+    border-radius: 10px;
   }
   .pagination-buttons {
     background-color: #003459;
@@ -80,8 +86,9 @@ const Wrapper = styled.section`
   .dogs-count {
     color: #003459;
   }
+
   .buttons-wrapper {
-    width: 200px;
+    width: 278px;
     align-self: center;
     margin: 30px;
     display: flex;
@@ -172,6 +179,7 @@ const Wrapper = styled.section`
     #page-arrows {
       width: unset;
       height: unset;
+      cursor: pointer;
     }
   }
 `;
@@ -199,7 +207,7 @@ const Category = () => {
   const { page } = useParams();
   const navigate = useNavigate();
 
-  const pageSize = 15;
+  const pageSize = isMobileFilter ? 15 : 20;
   const startIndex = (page - 1) * pageSize;
   const endIndex = startIndex + pageSize;
 
