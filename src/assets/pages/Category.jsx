@@ -26,6 +26,7 @@ const Wrapper = styled.section`
   }
   .page-arrows {
     width: 15px;
+    padding: 20px;
   }
   .pagination-buttons {
     background-color: #003459;
@@ -136,10 +137,13 @@ const Wrapper = styled.section`
     .filter {
       /* position: absolute; */
       /* display: none; */
-      background-color: tan;
+      padding-left: 10px;
+      background-color: #fceed5;
+      box-shadow: 2px 2px 2px 2px gray;
       border-radius: 10px;
       position: fixed;
       width: 70vw;
+      left: 15px;
     }
     .dogs-wrapper {
       width: 100%;
@@ -171,369 +175,7 @@ const Wrapper = styled.section`
     }
   }
 `;
-// const Category = () => {
-//   const [newDogsArray, setNewDogsArray] = useState(dogs);
-//   const [filterData, setFilterData] = useState({
-//     gender: { male: false, female: false },
-//     color: {
-//       white: false,
-//       gray: false,
-//       black: false,
-//       ["black&white"]: false,
-//       brown: false,
-//       ["Black & Tan"]: false,
-//     },
-//     breed: { small: false, medium: false, big: false },
-//   });
-//   const awd = newDogsArray.filter((dogy) => {
-//     // Check if gender filter is set for Male
-//     const isMale = filterData.gender.male && dogy.gender === "Male";
-//     const isFemale = filterData.gender.female && dogy.gender === "Female";
-//     const isWhite = filterData.color.white && dogy.color === "White";
-//     const isGray = filterData.color.gray && dogy.color === "Gray";
-//     const isBlack = filterData.color.black && dogy.color === "Black";
-//     const isBlackAndWhite =
-//       filterData.color["black&white"] && dogy.color === "Black & White";
-//     const isBrown = filterData.color.brown && dogy.color === "Brown";
-//     const isBlackAndTan =
-//       filterData.color["Black & Tan"] && dogy.color === "Black & Tan";
-//     const isSmall = filterData.breed.small && dogy.size === "Small";
-//     const isMedium = filterData.breed.medium && dogy.size === "Medium";
-//     const isBig = filterData.breed.big && dogy.size === "Large";
 
-//     return (
-//       isMale ||
-//       isFemale ||
-//       isWhite ||
-//       isGray ||
-//       isBlack ||
-//       isBlackAndWhite ||
-//       isBrown ||
-//       isBlackAndTan ||
-//       isSmall ||
-//       isMedium ||
-//       isBig
-//     );
-//   });
-
-//   function onFilterChange(e) {
-//     const clas = e.target.className;
-//     const id = e.target.id;
-
-//     setFilterData((prev) => {
-//       const updatedFilterData = {
-//         ...prev,
-//         [clas]: { ...prev[clas], [id]: !prev[clas]?.[id] },
-//       };
-
-//       // Immediately filter the dogs based on updatedFilterData
-//       const filteredDogs = dogs.filter((dogy) => {
-//         const isMale = updatedFilterData.gender.male && dogy.gender === "Male";
-//         const isFemale =
-//           updatedFilterData.gender.female && dogy.gender === "Female";
-//         const isWhite = updatedFilterData.color.white && dogy.color === "White";
-//         const isGray = updatedFilterData.color.gray && dogy.color === "Gray";
-//         const isBlack = updatedFilterData.color.black && dogy.color === "Black";
-//         const isBlackAndWhite =
-//           updatedFilterData.color["black&white"] &&
-//           dogy.color === "Black & White";
-//         const isBrown = updatedFilterData.color.brown && dogy.color === "Brown";
-//         const isBlackAndTan =
-//           updatedFilterData.color["Black & Tan"] &&
-//           dogy.color === "Black & Tan";
-//         const isSmall = updatedFilterData.breed.small && dogy.size === "Small";
-//         const isMedium =
-//           updatedFilterData.breed.medium && dogy.size === "Medium";
-//         const isBig = updatedFilterData.breed.big && dogy.size === "Large";
-
-//         return (
-//           isMale ||
-//           isFemale ||
-//           isWhite ||
-//           isGray ||
-//           isBlack ||
-//           isBlackAndWhite ||
-//           isBrown ||
-//           isBlackAndTan ||
-//           isSmall ||
-//           isMedium ||
-//           isBig
-//         );
-//       });
-//       // setNewDogsArray([...filteredDogs]);
-//       // Update the currentDogs to show the filtered results
-//       setCurrentDogs(filteredDogs);
-
-//       // Navigate to the first page since filter is changed
-//       navigate("/category/1");
-
-//       return updatedFilterData;
-//     });
-//   }
-
-//   const pageSize = 15;
-//   const { page } = useParams();
-//   const startIndex = (page - 1) * pageSize;
-//   const endIndex = startIndex + pageSize;
-//   const [currentDogs, setCurrentDogs] = useState(
-//     // newDogsArray.slice(startIndex, endIndex) || dogs
-//     [...newDogsArray.slice(startIndex, endIndex)]
-//   );
-
-//   const lastPage = Math.ceil(
-//     awd.length / pageSize || dogs.length / pageSize
-//     // currentDogs.length / pageSize ||
-//     //   newDogsArray.length / pageSize ||
-//     //   dogs.length / pageSize
-//   );
-//   console.log(currentDogs, "curdogs");
-//   const handlePageChange = (newPage) => {
-//     navigate(`/category/${newPage}`);
-//   };
-//   const navigate = useNavigate();
-//   const dogLink = useCallback((id) => {
-//     navigate(`/${id}`);
-//   }, []);
-//   let buttonsCount = new Array(lastPage).fill(1);
-//   //   console.log(newDogsArray);
-//   if (currentDogs.length === 0) {
-//     setCurrentDogs(newDogsArray.slice(startIndex, endIndex));
-//   }
-//   useEffect(() => {
-//     // Update the currentDogs based on the page change
-//     setCurrentDogs(newDogsArray.slice(startIndex, endIndex));
-//   }, [page, newDogsArray]);
-//   return (
-//     <Wrapper>
-//       <div className="filter">
-//         <h2>Filter</h2>
-//         <form>
-//           <p className="filter-names">Gender</p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"male"}
-//               id="male"
-//               className="gender"
-//             />
-//             <label htmlFor="male">Male</label>
-//           </p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"female"}
-//               id="female"
-//               className="gender"
-//             />
-//             <label htmlFor="female">Female</label>
-//           </p>
-//           <hr />
-//           <p className="filter-names">Color</p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"white"}
-//               id="white"
-//               className="color"
-//             />
-//             <label htmlFor="white">White</label>
-//           </p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"gray"}
-//               id="gray"
-//               className="color"
-//             />
-//             <label htmlFor="gray">Gray</label>
-//           </p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"black"}
-//               id="black"
-//               className="color"
-//             />
-//             <label htmlFor="black">Black</label>
-//           </p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"black & white"}
-//               style={{ whiteSpace: "wrap" }}
-//               id="black&white"
-//               className="color"
-//             />{" "}
-//             <label htmlFor="black&white">Black & White</label>
-//           </p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"brown"}
-//               id="brown"
-//               className="color"
-//             />
-//             <label htmlFor="brown">Brown</label>
-//           </p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"Black & Tan"}
-//               id="Black & Tan"
-//               className="color"
-//             />
-//             <label htmlFor="Black & Tan">Black & Tan</label>
-//           </p>
-//           <hr />
-//           <p className="filter-names">Price</p>
-//           <div>
-//             <input
-//               //   onChange={onFilterChange}
-//               className="price-input"
-//               type="number"
-//               placeholder="MIN"
-//               min={400}
-//             />
-//             <input
-//               //   onChange={onFilterChange}
-//               className="price-input"
-//               type="number"
-//               placeholder="MAX"
-//               min={"500"}
-//             />
-//           </div>
-//           <hr />
-//           <p className="filter-names">Breed</p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"small"}
-//               id="small"
-//               className="breed"
-//             />
-//             <label htmlFor="small">Small</label>
-//           </p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"medium"}
-//               id="medium"
-//               className="breed"
-//             />
-//             <label htmlFor="medium">Medium</label>
-//           </p>
-//           <p>
-//             <input
-//               onChange={onFilterChange}
-//               type="checkbox"
-//               value={"big"}
-//               id="big"
-//               className="breed"
-//             />
-//             <label htmlFor="big">Big</label>
-//           </p>
-//         </form>
-//       </div>
-//       <div className="dogs-container">
-//         <div className="dogs-count">
-//           <h2>
-//             Dogs: {currentDogs.length === 15 ? dogs.length : currentDogs.length}
-//           </h2>
-//           <select
-//             onChange={(e) => {
-//               const sortOrder = e.target.value;
-//               if (sortOrder === "A-Z") {
-//                 setCurrentDogs(
-//                   [...currentDogs].sort((a, b) =>
-//                     a.breed.localeCompare(b.breed)
-//                   )
-//                 );
-//               } else if (sortOrder === "Z-A") {
-//                 setCurrentDogs(
-//                   [...currentDogs].sort((a, b) =>
-//                     b.breed.localeCompare(a.breed)
-//                   )
-//                 );
-//               } else if (sortOrder === "initial") {
-//                 setCurrentDogs(currentDogs);
-//               }
-//             }}
-//           >
-//             <option value={"initial"}>Sort by: Popular</option>
-//             <option value={"A-Z"}>A-Z</option>
-//             <option value={"Z-A"}>Z-A</option>
-//           </select>
-//         </div>
-//         <div className="dogs-wrapper">
-//           {currentDogs?.map((dog) => {
-//             return (
-//               <DogWrapper
-//                 key={dog.sku}
-//                 id={dog.sku}
-//                 dog={dog}
-//                 onClick={(e) => {
-//                   dogLink(dog.sku);
-//                 }}
-//               />
-//             );
-//           })}
-//         </div>
-
-//         <div className="buttons-wrapper">
-//           {lastPage !== 1 && (
-//             <button
-//               type="button"
-//               onClick={() => {
-//                 handlePageChange(page - 1 !== 0 ? page - 1 : lastPage);
-//                 window.scrollTo(0, 0);
-//               }}
-//             >
-//               previous
-//             </button>
-//           )}
-//           {buttonsCount.map((item, index) => {
-//             return (
-//               <button
-//                 key={index}
-//                 onClick={() => {
-//                   handlePageChange(index + 1);
-//                   window.scrollTo(0, 0);
-//                 }}
-//               >
-//                 {index + 1}
-//               </button>
-//             );
-//           })}
-//           {lastPage !== 1 && (
-//             <button
-//               type="button"
-//               onClick={() => {
-//                 handlePageChange(
-//                   Number(page) + 1 <= lastPage ? Number(page) + 1 : 1
-//                 );
-//                 window.scrollTo(0, 0);
-//               }}
-//             >
-//               next
-//             </button>
-//           )}
-//         </div>
-//       </div>
-//     </Wrapper>
-//   );
-// };
-
-// export default Category;
 const Category = () => {
   // console.log();
   const [isMobileFilter, setIsMobileFilter] = useState(
@@ -567,7 +209,6 @@ const Category = () => {
     filteredDogs.length / pageSize || dogs.length / pageSize
   );
 
-  // Update current dogs based on the current page and filteredDogs
   useEffect(() => {
     setCurrentDogs(filteredDogs.slice(startIndex, endIndex));
   }, [page, filteredDogs]);
@@ -584,7 +225,6 @@ const Category = () => {
         },
       };
 
-      // Filter the dogs based on the updated filter data
       const filteredList = dogs.filter((dogy) => {
         const isMale = updatedFilterData.gender.male && dogy.gender === "Male";
         const isFemale =
@@ -619,7 +259,6 @@ const Category = () => {
         );
       });
 
-      // Update filtered dogs state and reset to page 1
       setFilteredDogs(filteredList);
       navigate("/category/1");
 
@@ -669,6 +308,7 @@ const Category = () => {
                 type="checkbox"
                 value={"male"}
                 id="male"
+                checked={filterData.gender.male}
                 className="gender"
               />
               <label htmlFor="male">Male</label>
@@ -676,6 +316,7 @@ const Category = () => {
             <p>
               <input
                 onChange={onFilterChange}
+                checked={filterData.gender.female}
                 type="checkbox"
                 value={"female"}
                 id="female"
@@ -687,6 +328,7 @@ const Category = () => {
             <p className="filter-names">Color</p>
             <p>
               <input
+                checked={filterData.color.white}
                 onChange={onFilterChange}
                 type="checkbox"
                 value={"white"}
@@ -697,6 +339,7 @@ const Category = () => {
             </p>
             <p>
               <input
+                checked={filterData.color.gray}
                 onChange={onFilterChange}
                 type="checkbox"
                 value={"gray"}
@@ -707,6 +350,7 @@ const Category = () => {
             </p>
             <p>
               <input
+                checked={filterData.color.black}
                 onChange={onFilterChange}
                 type="checkbox"
                 value={"black"}
@@ -717,6 +361,7 @@ const Category = () => {
             </p>
             <p>
               <input
+                checked={filterData.color["black&white"]}
                 onChange={onFilterChange}
                 type="checkbox"
                 value={"black & white"}
@@ -728,6 +373,7 @@ const Category = () => {
             </p>
             <p>
               <input
+                checked={filterData.color.brown}
                 onChange={onFilterChange}
                 type="checkbox"
                 value={"brown"}
@@ -738,6 +384,7 @@ const Category = () => {
             </p>
             <p>
               <input
+                checked={filterData.color["black & tan"]}
                 onChange={onFilterChange}
                 type="checkbox"
                 value={"Black & Tan"}
@@ -772,12 +419,14 @@ const Category = () => {
                 type="checkbox"
                 value={"small"}
                 id="small"
+                checked={filterData.breed.small}
                 className="breed"
               />
               <label htmlFor="small">Small</label>
             </p>
             <p>
               <input
+                checked={filterData.breed.medium}
                 onChange={onFilterChange}
                 type="checkbox"
                 value={"medium"}
@@ -789,6 +438,7 @@ const Category = () => {
             <p>
               <input
                 onChange={onFilterChange}
+                checked={filterData.breed.large}
                 type="checkbox"
                 value={"big"}
                 id="big"
