@@ -52,7 +52,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     width: 100vw;
     padding: 0;
-    height: calc(100vh);
+    height: unset;
     justify-content: unset;
     align-items: unset;
     white-space: unset;
@@ -69,13 +69,9 @@ const Wrapper = styled.section`
       font-size: 28px;
     }
     .img-container {
-      /* display: flex;
-      justify-content: center;
-      align-items: center; */
       width: 100vw;
-      /* padding-left: 10px; */
+
       text-align: center;
-      /* height: 20px; */
     }
     .img-container img {
       object-fit: fill;

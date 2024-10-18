@@ -7,10 +7,16 @@ const Wrapper = styled.div`
   background-color: #ffffff;
   border-radius: 15px;
   cursor: pointer;
+
   img {
     width: 264px;
     height: 264px;
     object-fit: fill;
+    border-radius: 10px;
+  }
+  img:hover {
+    scale: 1.1;
+    transition: 0.2s;
   }
   .dog-name {
     font-size: 16px;
@@ -30,6 +36,33 @@ const Wrapper = styled.div`
     font-weight: bold;
   }
   .dog-info {
+  }
+  @media (max-width: 1000px) {
+    box-sizing: border-box;
+    width: 180px;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    img {
+      width: 169px;
+      height: 169px;
+    }
+    .dog-info {
+      padding: 0 10px;
+    }
+    .gender {
+      display: flex;
+      justify-content: left;
+    }
+    .gender > p {
+      margin: 0%;
+    }
+    .dog-price {
+      font-weight: bold;
+    }
   }
 `;
 

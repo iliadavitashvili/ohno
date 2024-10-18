@@ -93,7 +93,7 @@ const Wrapper = styled.div`
 `;
 const DesktopDogInfo = ({ skuId }) => {
   const currentDog = dogs.filter((dog) => skuId == dog.sku)[0];
-  console.log(currentDog);
+  // console.log(currentDog);
   return (
     <Wrapper>
       <img
