@@ -37,6 +37,11 @@ const Wrapper = styled.div`
   }
   .dog-info {
   }
+  .gender small {
+    margin-left: 15px;
+    font-size: 16px;
+  }
+  /* style={{ marginLeft: "15px", fontSize: "16px" }} */
   @media (max-width: 1000px) {
     box-sizing: border-box;
     width: 180px;
@@ -51,17 +56,28 @@ const Wrapper = styled.div`
       height: 169px;
     }
     .dog-info {
-      padding: 0 10px;
+      /* padding: 0 10px; */
+    }
+    .dog-name {
+      font-size: 14px;
+      font-family: sans-serif;
     }
     .gender {
       display: flex;
-      justify-content: left;
+      font-size: 12px;
+      justify-content: space-between;
+    }
+    .gender small {
+      margin: unset;
+      font-size: 12px;
     }
     .gender > p {
       margin: 0%;
     }
     .dog-price {
       font-weight: bold;
+      font-size: 16px;
+      margin: 0;
     }
   }
 `;
@@ -82,11 +98,11 @@ const DogWrapper = ({ dog, ...rest }) => {
           MO502 - {dog.breed} {dog.color}
         </p>
         <p className="gender">
-          <small style={{ marginRight: "15px", fontSize: "16px" }}>
+          <small>
             gene: <span>{dog.gender}</span>
           </small>
           *
-          <small style={{ marginLeft: "15px", fontSize: "16px" }}>
+          <small>
             age: <span>{dog.age} year</span>{" "}
           </small>
         </p>
