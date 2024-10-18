@@ -20,7 +20,7 @@ const CustomButton = ({
     backgroundColor: transparent ? "transparent" : "#003459",
     border: transparent ? "2px solid #003459 " : "2px solid white",
     height: "48px",
-    width: "160px",
+    width: "180px",
     borderRadius: "20px",
     display: "flex",
     justifyContent: "center",

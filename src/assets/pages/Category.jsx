@@ -615,7 +615,10 @@ const Category = () => {
                 key={dog.sku}
                 id={dog.sku}
                 dog={dog}
-                onClick={() => dogLink(dog.sku)}
+                onClick={() => {
+                  dogLink(dog.sku);
+                  window.scrollTo(0, 0);
+                }}
               />
             ))}
           </div>
