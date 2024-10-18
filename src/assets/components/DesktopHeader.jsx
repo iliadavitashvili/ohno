@@ -7,6 +7,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import UserProfile from "./UserProfile";
 const Wrapper = styled.header`
   user-select: none;
+
   width: 100vw;
   nav {
     background-color: #fceed5;
@@ -65,9 +66,8 @@ const Wrapper = styled.header`
 const DesktopHeader = () => {
   const { lang, setLang, user, setUser, ShowUserProfile, setShowUserProfile } =
     useHomeLayoutContext();
-  // const [ShowUserProfile, setShowUserProfile = useState(false);
+
   const isLanguageEnglish = lang === "ENG";
-  // console.log(user, "changeed");
 
   const languageChange = () => {
     setLang((prev) => (prev === "ENG" ? "GEO" : "ENG"));

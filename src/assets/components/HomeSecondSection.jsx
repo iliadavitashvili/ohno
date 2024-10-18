@@ -10,6 +10,8 @@ const Wrapper = styled.section`
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 10px;
+  display: flex;
+  flex-direction: column;
 
   .dogs-grid {
     width: 100%;
@@ -17,12 +19,13 @@ const Wrapper = styled.section`
     grid-gap: 20px;
     grid-template-columns: repeat(4, 284px);
     grid-template-rows: minmax(100px, auto);
-    justify-content: space-around;
+    justify-content: center;
   }
   .info-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 100px;
   }
 
   .info-wrapper h2 {
@@ -58,6 +61,9 @@ const Wrapper = styled.section`
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .info-wrapper {
+      margin: unset;
     }
   }
 `;

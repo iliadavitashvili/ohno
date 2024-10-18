@@ -4,9 +4,10 @@ import CustomButton from "./CustomButton";
 import { useEffect, useState } from "react";
 import { useHomeLayoutContext } from "../pages/HomeLayout";
 const Wrapper = styled.section`
-  padding: 0 8%;
-  width: 1440px;
-  height: calc(100vh - 100px);
+  width: 100vw;
+  margin: 0 auto;
+  border-radius: 10px;
+
   display: flex;
   justify-content: space-evenly;
   background-color: #fceed5;
@@ -14,8 +15,8 @@ const Wrapper = styled.section`
     width: 33%;
     display: flex;
     flex-direction: column;
-    padding: 0 5vw;
-    /* margin: 0; */
+    padding: 0 2vw;
+
     justify-content: flex-start;
   }
   h1 {
@@ -83,11 +84,6 @@ const Wrapper = styled.section`
 `;
 const HomeFirstSection = () => {
   const { lang, setLang } = useHomeLayoutContext();
-  //   const [language, setLanguage] = useState("");
-  //   useEffect(() => {
-  //     setLanguage(JSON.parse(localStorage.getItem("lang")));
-  //   }, [lang]);
-  //   console.log(lang, "here homef");
 
   const isLanguageEng = lang === "ENG";
   return (
@@ -112,11 +108,7 @@ const HomeFirstSection = () => {
         </div>
       </div>
       <div className="img-container">
-        <img
-          src={dog}
-          alt="woman holding a dog"
-          //   style={{ maxWidth: "900px" }}
-        />
+        <img src={dog} alt="woman holding a dog" />
       </div>
     </Wrapper>
   );
