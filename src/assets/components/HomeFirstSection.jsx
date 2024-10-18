@@ -3,14 +3,26 @@ import dog from "../images/homeSectionImages/dog.png";
 import CustomButton from "./CustomButton";
 import { useEffect, useState } from "react";
 import { useHomeLayoutContext } from "../pages/HomeLayout";
+import rec1 from "../images/homeFirstSectionImages/rec1.png";
+import rec2 from "../images/homeFirstSectionImages/rec2.png";
+import rec3 from "../images/homeFirstSectionImages/rec3.png";
+import rec4 from "../images/homeFirstSectionImages/rec4.png";
+import rec5 from "../images/homeFirstSectionImages/rec5.png";
+import rec6 from "../images/homeFirstSectionImages/rec6.png";
+import rec7 from "../images/homeFirstSectionImages/rec7.png";
+import rec8 from "../images/homeFirstSectionImages/rec8.png";
 const Wrapper = styled.section`
   width: 100vw;
   margin: 0 auto;
   border-radius: 10px;
-
   display: flex;
   justify-content: space-evenly;
   background-color: #fceed5;
+  background-image: url(${rec2}), url(${rec1}), url(${rec3}), url(${rec4}),
+    url(${rec6}), url(${rec5}), url(${rec7}), url(${rec8});
+  background-position: 85% bottom, 70% 100%, 3% 3%, 46% 12%, 45% 20%, 45% 19%,
+    bottom left;
+  background-repeat: no-repeat;
   .info-container {
     width: 33%;
     display: flex;
@@ -50,6 +62,10 @@ const Wrapper = styled.section`
     align-items: end;
   }
   @media (max-width: 992px) {
+    background-image: url(${rec2}), url(${rec1}), url(${rec3}), url(${rec4}),
+      url(${rec6}), url(${rec5}), url(${rec7}), url(${rec8});
+    background-position: 85% 390%, 70% 230%, 3% 3%, 46% 12%, 45% 20%, 45% 19%,
+      bottom left;
     flex-direction: column;
     width: 100vw;
     padding: 0;

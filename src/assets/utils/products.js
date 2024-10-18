@@ -8,7 +8,7 @@ import image7 from "../images/homeForthSectionImages/image7.png";
 import image8 from "../images/homeForthSectionImages/image8.png";
 const products = [
   {
-    name: "Reflex Plus Adult Dog Food Salmon",
+    name: "Reflex Plus Adult Dog Food Salmon rope bal",
     product: "Dog Food",
     size: "385gm",
     price: "140.00 GEL",
@@ -16,7 +16,7 @@ const products = [
     image: image1,
   },
   {
-    name: "Reflex Plus Adult Cat Food Salmon",
+    name: "Reflex Plus Adult Cat Food Salmon  rope bal",
     product: "Cat Food",
     size: "1.5kg",
     price: "200.00 GEL",
@@ -24,7 +24,7 @@ const products = [
     image: image2,
   },
   {
-    name: "Cat scratching ball toy kitten sisal rope ball",
+    name: "Cat scratching ball toy kitten sisal rope ball ball apar",
     product: "Toy",
     size: "385gm",
     price: "1400.00 GEL",
@@ -32,7 +32,7 @@ const products = [
     image: image3,
   },
   {
-    name: "Cute Pet Cat Warm Nest",
+    name: "Cute Pet Cat Warm Nest sisal rope bal rope bal",
     product: "Toy",
     size: "385gm",
     price: "10.00 GEL",
@@ -40,7 +40,7 @@ const products = [
     image: image4,
   },
   {
-    name: "NaturVet Dogs - Omega-Gold Plus Salmon Oil",
+    name: "NaturVet Dogs - Omega-Gold Plus Salmon Oil rope bal",
     product: "Dog Food",
     size: "385gm",
     price: "340.00 GEL",
@@ -48,7 +48,7 @@ const products = [
     image: image5,
   },
   {
-    name: "Costumes Fashion Pet Clother Cowboy Rider",
+    name: "Costumes Fashion Pet Clother Cowboy Rider rope bal",
     product: "Toy",
     size: "385gm",
     price: "240.00 GEL",
@@ -56,7 +56,7 @@ const products = [
     image: image6,
   },
   {
-    name: "Costumes Chicken Drumsti ck Headband",
+    name: "Costumes Chicken Drumsti ck Headband  rope bal",
     product: "Toy",
     size: "385gm",
     price: "140.00 GEL",
@@ -64,7 +64,7 @@ const products = [
     image: image7,
   },
   {
-    name: "Plush Pet Toy",
+    name: "Plush Pet Toy sisal rope bal Plush Pet  rope bal",
     product: "Toy",
     size: "385gm",
     price: "40.00 GEL",

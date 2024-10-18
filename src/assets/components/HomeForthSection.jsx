@@ -47,9 +47,7 @@ const HomeForthSection = () => {
           <p>Hard to choose right products for your pets?</p>
           <h2>Our Products</h2>
         </div>
-        {window.innerWidth > "1000" && (
-          <CustomButton text={"View more"} icon={"arrow"} transparent />
-        )}
+        <CustomButton text={"View more"} icon={"arrow"} transparent />
       </div>
       <div className="dogs-grid">
         {/* <ProductWrapper {...product} /> */}
