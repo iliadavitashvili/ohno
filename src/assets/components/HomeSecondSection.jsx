@@ -4,7 +4,7 @@ import CustomButton from "./CustomButton";
 import getRandomDogs from "../utils/randomDogs";
 import DogWrapper from "./DogWrapper";
 import arrowIcon from "../images/buttonIcons/arrow.png";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Wrapper = styled.section`
   max-width: 1440px;
   margin: 0 auto;
@@ -18,7 +18,6 @@ const Wrapper = styled.section`
     grid-template-columns: repeat(4, 284px);
     grid-template-rows: minmax(100px, auto);
     justify-content: space-around;
-    /* justify-content: end; */
   }
   .info-wrapper {
     display: flex;
@@ -37,8 +36,8 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 1000px) {
+    padding: unset;
     .dogs-grid {
-      /* margin: 0 10px; */
       width: 100vw;
       display: grid;
       grid-gap: 10px;
@@ -46,7 +45,6 @@ const Wrapper = styled.section`
       grid-template-rows: minmax(100px, auto);
       justify-content: space-around;
       justify-items: center;
-      /* justify-content: end; */
     }
     .bigbtn {
       margin: 20px;
