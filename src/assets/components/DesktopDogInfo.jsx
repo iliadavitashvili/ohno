@@ -71,6 +71,16 @@ const Wrapper = styled.div`
   @media (max-width: 1000px) {
     display: none;
   }
+  h1,
+  h2 {
+    color: rgb(0, 52, 89);
+    font-weight: bolder;
+    font-family: sans-serif;
+  }
+  .guarantee {
+    color: rgb(0, 52, 89);
+    font-weight: normal;
+  }
 `;
 const DesktopDogInfo = ({ skuId }) => {
   const currentDog = dogs.filter((dog) => skuId == dog.sku)[0];
@@ -165,11 +175,7 @@ const DesktopDogInfo = ({ skuId }) => {
           </p>
           <hr />
           <p className="dog-detail">
-            <span>Additional information</span> :
-            <span>
-              <span>{currentDog.age}</span>
-              year old friendly {currentDog.breed}
-            </span>
+            <span>Additional information</span> :loyal and friendly
           </p>
           <hr />
         </div>
