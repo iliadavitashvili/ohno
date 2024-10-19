@@ -11,6 +11,7 @@ import youTubeIcon from "../images/socIcons/youtube.png";
 import shareIcon from "../images/socIcons/shareIcon.png";
 import DesktopDogInfo from "../components/DesktopDogInfo";
 import MobileDogInfo from "../components/MobileDogInfo";
+import CurrentDogSlider from "../components/CurrentDogSlider";
 
 const Wrapper = styled.div`
   .dog-info {
@@ -26,6 +27,7 @@ const Dog = () => {
     <Wrapper>
       <DesktopDogInfo skuId={skuId} />
       <MobileDogInfo skuId={skuId} />
+      <CurrentDogSlider />
     </Wrapper>
   );
 };

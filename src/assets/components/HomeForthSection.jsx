@@ -51,8 +51,8 @@ const HomeForthSection = () => {
       </div>
       <div className="dogs-grid">
         {/* <ProductWrapper {...product} /> */}
-        {products.map((product) => {
-          return <ProductWrapper {...product} />;
+        {products.map((product, index) => {
+          return <ProductWrapper key={index} {...product} />;
         })}
       </div>
     </Wrapper>
