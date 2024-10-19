@@ -6,6 +6,8 @@ import HomeSecondSection from "./HomeSecondSection";
 import HomeSeventhSection from "./HomeSeventhSection";
 import HomeSixthSection from "./HomeSixthSection";
 import HomeThirdSection from "./HomeThirdSection";
+import BigSummerEvent from "./BigSummerEvent";
+
 const Wrapper = styled.main`
   .section {
   }
@@ -20,6 +22,7 @@ const HomeContainer = () => {
       <HomeFifthSection />
       <HomeSixthSection />
       <HomeSeventhSection />
+      <BigSummerEvent />
     </Wrapper>
   );
 };

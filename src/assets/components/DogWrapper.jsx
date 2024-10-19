@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   background-color: #ffffff;
   border-radius: 15px;
   cursor: pointer;
-
+  box-shadow: 1px 1px 5px 1px gray;
   img {
     width: 264px;
     height: 264px;
