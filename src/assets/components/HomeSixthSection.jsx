@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import rectWhite from "../images/homeSixthSectionImages/rectWhite.png";
 import rectTrans from "../images/homeSixthSectionImages/rectTransparent.png";
-import handShakeImage from "../images/homeSixthSectionImages/handShake.png";
+import handShakeImage from "../images/homeSixthSectionImages/handshake.png";
 import paw from "../images/homeSixthSectionImages/paw.png";
 import CustomButton from "./CustomButton";
 const Wrapper = styled.section`
