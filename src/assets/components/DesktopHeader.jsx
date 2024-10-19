@@ -8,11 +8,13 @@ import UserProfile from "./UserProfile";
 const Wrapper = styled.header`
   user-select: none;
 
-  width: 100vw;
+  max-width: 100vw;
+  /* margin: 0 auto; */
   nav {
     background-color: #fceed5;
-    max-width: 1440px;
+    /* max-width: 100vw; */
     height: 100px;
+    /* margin: 0 auto; */
     display: flex;
     justify-content: space-between;
     padding: 0 8%;

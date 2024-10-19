@@ -6,7 +6,7 @@ import DogWrapper from "./DogWrapper";
 import arrowIcon from "../images/buttonIcons/arrow.png";
 import { useNavigate } from "react-router-dom";
 const Wrapper = styled.section`
-  max-width: 1440px;
+  max-width: 100vw;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 10px;

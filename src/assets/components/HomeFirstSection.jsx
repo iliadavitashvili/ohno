@@ -12,8 +12,8 @@ import rec6 from "../images/homeFirstSectionImages/rec6.png";
 import rec7 from "../images/homeFirstSectionImages/rec7.png";
 import rec8 from "../images/homeFirstSectionImages/rec8.png";
 const Wrapper = styled.section`
-  width: 100vw;
-  margin: 0 auto;
+  max-width: 100vw;
+  /* margin: 0 auto; */
   border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
@@ -67,7 +67,7 @@ const Wrapper = styled.section`
     background-position: 85% 390%, 70% 230%, 3% 3%, 46% 12%, 45% 20%, 45% 19%,
       bottom left;
     flex-direction: column;
-    width: 100vw;
+    /* width: 100vw; */
     padding: 0;
     height: unset;
     justify-content: unset;
