@@ -5,6 +5,7 @@ import HomeSecondSection from "./HomeSecondSection";
 import HomeSeventhSection from "./HomeSeventhSection";
 import HomeSixthSection from "./HomeSixthSection";
 import HomeThirdSection from "./HomeThirdSection";
+
 const HomeContainer = () => {
   return (
     <>

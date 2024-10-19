@@ -104,7 +104,13 @@ const HomeSecondSection = () => {
         })}
       </div>
       {window.innerWidth < "1000" && (
-        <button onClick={() => navigate("/category/1")} className="bigbtn">
+        <button
+          onClick={() => {
+            navigate("/category/1");
+            window.scrollTo(0, 0);
+          }}
+          className="bigbtn"
+        >
           View More
           <img src={arrowIcon} />
         </button>

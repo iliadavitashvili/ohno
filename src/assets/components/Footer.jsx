@@ -226,17 +226,29 @@ const Footer = () => {
       <div className="footer-nav">
         <nav>
           <ul>
-            <NavLink to={"/"} activeclassname="active">
+            <NavLink
+              to={"/"}
+              activeclassname="active"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Home
             </NavLink>
             {/* <li>Home</li> */}
-            <NavLink to={"/category/1"} activeclassname="active">
+            <NavLink
+              to={"/category/1"}
+              activeclassname="active"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Category
             </NavLink>
             {/* <li>Category</li> */}
             <li>About</li>
             {/* <li>Contact</li> */}
-            <NavLink to={"/contact"} activeclassname="active">
+            <NavLink
+              to={"/contact"}
+              activeclassname="active"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Contact
             </NavLink>
           </ul>
