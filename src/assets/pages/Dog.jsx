@@ -1,19 +1,13 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import dogs from "../utils/dogs";
-import CustomButton from "../components/CustomButton";
-import guaranteeRed from "../images/guaranteeIcons/guaranteeRed.png";
-import guaranteeYellow from "../images/guaranteeIcons/guaranteeYellow.png";
-import fbIcon from "../images/socIcons/facebook.png";
-import instIcon from "../images/socIcons/instagram.png";
-import twiterIcon from "../images/socIcons/twitter.png";
-import youTubeIcon from "../images/socIcons/youtube.png";
-import shareIcon from "../images/socIcons/shareIcon.png";
+
 import DesktopDogInfo from "../components/DesktopDogInfo";
 import MobileDogInfo from "../components/MobileDogInfo";
 import CurrentDogSlider from "../components/CurrentDogSlider";
 import DogWrapper from "../components/DogWrapper";
 import getRandomDogs from "../utils/randomDogs";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div`
   margin: 20px 0;
   .info-wrapper {
@@ -62,7 +56,10 @@ const Wrapper = styled.div`
 
 const Dog = () => {
   const { skuId } = useParams();
-
+  const navigate = useNavigate();
+  const dogLink = useCallback((id) => {
+    navigate(`/${id}`);
+  }, []);
   // console.log(currentDog);
   return (
     <Wrapper>
