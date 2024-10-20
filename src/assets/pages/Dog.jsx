@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-
+import Chat from "../components/Chat";
 import DesktopDogInfo from "../components/DesktopDogInfo";
 import MobileDogInfo from "../components/MobileDogInfo";
 import CurrentDogSlider from "../components/CurrentDogSlider";
 import DogWrapper from "../components/DogWrapper";
 import getRandomDogs from "../utils/randomDogs";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div`
   margin: 20px 0;
@@ -61,10 +61,12 @@ const Dog = () => {
     navigate(`/${id}`);
   }, []);
   // console.log(currentDog);
+  const [isChatOpen, setIsChatOpen] = useState(true);
+  // console.log(isChatOpen);
   return (
     <Wrapper>
-      <DesktopDogInfo skuId={skuId} />
-      <MobileDogInfo skuId={skuId} />
+      <DesktopDogInfo skuId={skuId} setIsChatOpen={setIsChatOpen} />
+      <MobileDogInfo skuId={skuId} setIsChatOpen={setIsChatOpen} />
       <CurrentDogSlider />
       <section>
         <div className="info-wrapper">
@@ -89,6 +91,7 @@ const Dog = () => {
           })}
         </div>
       </section>
+      {isChatOpen && <Chat setIsChatOpen={setIsChatOpen} />}
     </Wrapper>
   );
 };

@@ -91,7 +91,7 @@ const Wrapper = styled.div`
     font-weight: normal;
   }
 `;
-const DesktopDogInfo = ({ skuId }) => {
+const DesktopDogInfo = ({ skuId, setIsChatOpen }) => {
   const currentDog = dogs.filter((dog) => skuId == dog.sku)[0];
   // console.log(currentDog);
   return (
@@ -107,6 +107,7 @@ const DesktopDogInfo = ({ skuId }) => {
         <div className="dog-name-buttons">
           <CustomButton text={"Contact Us"} />
           <CustomButton
+            onClick={() => setIsChatOpen((prev) => !prev)}
             text={"Chat with Monito"}
             icon={"message"}
             transparent

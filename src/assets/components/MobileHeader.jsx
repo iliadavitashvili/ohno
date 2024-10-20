@@ -99,9 +99,8 @@ const MobileHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { lang, setLang, user, setUser, ShowUserProfile, setShowUserProfile } =
     useHomeLayoutContext();
-  // const [ShowUserProfile, setShowUserProfile = useState(false);
+
   const isLanguageEnglish = lang === "ENG";
-  // console.log(user, "changeed");
 
   const languageChange = () => {
     setLang((prev) => (prev === "ENG" ? "GEO" : "ENG"));
@@ -110,6 +109,7 @@ const MobileHeader = () => {
     localStorage.setItem("lang", JSON.stringify(lang));
   }, [lang]);
   const navigate = useNavigate();
+
   return (
     <Wrapper>
       <nav>
@@ -118,7 +118,12 @@ const MobileHeader = () => {
           <span className="header-logo-under-text">Pets for Best</span>
         </div>
 
-        <img src={hamburger} onClick={() => setShowMenu((prev) => !prev)} />
+        <img
+          src={hamburger}
+          onClick={() => {
+            setShowMenu((prev) => !prev);
+          }}
+        />
         {showMenu && (
           <div
             className="backdrop"
