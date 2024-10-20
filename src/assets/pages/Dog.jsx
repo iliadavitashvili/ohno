@@ -8,6 +8,7 @@ import DogWrapper from "../components/DogWrapper";
 import getRandomDogs from "../utils/randomDogs";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useHomeLayoutContext } from "./HomeLayout";
 const Wrapper = styled.div`
   margin: 20px 0;
   .info-wrapper {
@@ -61,7 +62,8 @@ const Dog = () => {
     navigate(`/${id}`);
   }, []);
   // console.log(currentDog);
-  const [isChatOpen, setIsChatOpen] = useState(true);
+  // const [isChatOpen, setIsChatOpen] = useState(false);
+  const { isChatOpen, setIsChatOpen } = useHomeLayoutContext();
   // console.log(isChatOpen);
   return (
     <Wrapper>

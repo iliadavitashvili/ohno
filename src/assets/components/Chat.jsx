@@ -7,6 +7,7 @@ import {
   getRandomNews,
 } from "../utils/chat.js";
 import ChatMessage from "./ChatMessage.jsx";
+import { useHomeLayoutContext } from "../pages/HomeLayout.jsx";
 const Wrapper = styled.section`
   position: relative;
   display: flex;
@@ -71,14 +72,21 @@ const Wrapper = styled.section`
   }
 `;
 
-const Chat = ({ setIsChatOpen }) => {
+const Chat = () => {
+  const { isChatOpen, setIsChatOpen } = useHomeLayoutContext();
   const isFirstLoad = useRef(true);
-  const [chat, setChat] = useState([]);
+  const [chat, setChat] = useState(
+    JSON.parse(localStorage.getItem("chat")) || []
+  );
   const [text, setText] = useState("");
+  console.log(chat);
+  const chatContainerRef = useRef(null);
   const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes();
-
+  useEffect(() => {
+    localStorage.setItem("chat", JSON.stringify(chat));
+  }, [chat]);
   useEffect(() => {
     if (isFirstLoad.current) {
       isFirstLoad.current = false;
@@ -89,11 +97,20 @@ const Chat = ({ setIsChatOpen }) => {
       ]);
     }
   }, [text]);
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [chat]);
 
-  //   console.log(chat);
   function handleKeyDown(e) {
     if (e.key === "Enter" && e.target.id === "texta" && e.target.value != "") {
-      setText(e.target.value);
+      const messageText = e.target.value;
+      setChat((prev) => [
+        ...prev,
+        { author: "user", news: messageText, time: `${hours}:${minutes}` },
+      ]);
       e.target.value = "";
     }
   }
@@ -129,7 +146,7 @@ const Chat = ({ setIsChatOpen }) => {
       </h1>
       <img src={chatDog} alt="dog icon" />
 
-      <div className="chat-container">
+      <div className="chat-container" ref={chatContainerRef}>
         {chat.map((item, index) => {
           return <ChatMessage key={index} {...item} />;
         })}

@@ -54,6 +54,7 @@ const UserProfile = ({ setShowMenu }) => {
           onClick={() => {
             localStorage.removeItem("user");
             localStorage.removeItem("lang");
+            localStorage.removeItem("chat");
             window.dispatchEvent(new Event("userUpdated"));
             setShowUserProfile((prev) => !prev);
             setShowMenu((prev) => !prev);

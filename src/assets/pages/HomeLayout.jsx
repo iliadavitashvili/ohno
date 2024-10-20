@@ -27,7 +27,7 @@ const HomeLayout = () => {
       window.removeEventListener("userUpdated", handleUserUpdate);
     };
   }, []);
-
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [lang, setLang] = useState(
     JSON.parse(localStorage.getItem("lang")) || "ENG"
   );
@@ -41,6 +41,8 @@ const HomeLayout = () => {
         setUser,
         ShowUserProfile,
         setShowUserProfile,
+        isChatOpen,
+        setIsChatOpen,
       }}
     >
       <DesktopHeader />

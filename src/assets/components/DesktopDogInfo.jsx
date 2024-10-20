@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { redirect, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import dogs from "../utils/dogs";
 import CustomButton from "../components/CustomButton";
@@ -10,6 +10,7 @@ import instIcon from "../images/socIcons/instagram.png";
 import twiterIcon from "../images/socIcons/twitter.png";
 import youTubeIcon from "../images/socIcons/youtube.png";
 import shareIcon from "../images/socIcons/shareIcon.png";
+import { useHomeLayoutContext } from "../pages/HomeLayout";
 
 const Wrapper = styled.div`
   display: flex;
@@ -50,6 +51,7 @@ const Wrapper = styled.div`
   }
   .current-dog-image {
     border-radius: 15px;
+    /* maxwidth: 80%; */
   }
   .share-container {
     img {
@@ -84,7 +86,9 @@ const Wrapper = styled.div`
 `;
 const DesktopDogInfo = ({ skuId, setIsChatOpen }) => {
   const currentDog = dogs.filter((dog) => skuId == dog.sku)[0];
-  // console.log(currentDog);
+  const { user } = useHomeLayoutContext();
+  const navigate = useNavigate();
+  // console.log(user);
   return (
     <Wrapper>
       {/* <div className="dog-info"> */}
@@ -122,12 +126,25 @@ const DesktopDogInfo = ({ skuId, setIsChatOpen }) => {
           <h2>{currentDog.price}.00 GEL</h2>
           <div className="dog-name-buttons">
             <CustomButton text={"Contact Us"} />
-            <CustomButton
-              onClick={() => setIsChatOpen((prev) => !prev)}
-              text={"Chat with Monito"}
-              icon={"message"}
-              transparent
-            />
+            {user?.login && (
+              <CustomButton
+                onClick={() => setIsChatOpen((prev) => !prev)}
+                text={"Chat with Monito"}
+                icon={"message"}
+                transparent
+              />
+            )}
+            {!user?.login && (
+              <CustomButton
+                onClick={() => {
+                  navigate("/register");
+                  window.scrollTo(0, 0);
+                }}
+                text={"Chat with Monito"}
+                icon={"message"}
+                transparent
+              />
+            )}
           </div>
         </div>
         <div className="dog-details">

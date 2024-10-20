@@ -10,6 +10,8 @@ import instIcon from "../images/socIcons/instagram.png";
 import twiterIcon from "../images/socIcons/twitter.png";
 import youTubeIcon from "../images/socIcons/youtube.png";
 import shareIcon from "../images/socIcons/shareIcon.png";
+import { useHomeLayoutContext } from "../pages/HomeLayout";
+import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: flex;
@@ -92,6 +94,8 @@ const Wrapper = styled.div`
   }
 `;
 const DesktopDogInfo = ({ skuId, setIsChatOpen }) => {
+  const { user } = useHomeLayoutContext();
+  const navigate = useNavigate();
   const currentDog = dogs.filter((dog) => skuId == dog.sku)[0];
   // console.log(currentDog);
   return (
@@ -106,12 +110,22 @@ const DesktopDogInfo = ({ skuId, setIsChatOpen }) => {
         <h2>{currentDog.price}.00 GEL</h2>
         <div className="dog-name-buttons">
           <CustomButton text={"Contact Us"} />
-          <CustomButton
-            onClick={() => setIsChatOpen((prev) => !prev)}
-            text={"Chat with Monito"}
-            icon={"message"}
-            transparent
-          />
+          {user?.login && (
+            <CustomButton
+              onClick={() => setIsChatOpen((prev) => !prev)}
+              text={"Chat with Monito"}
+              icon={"message"}
+              transparent
+            />
+          )}
+          {!user?.login && (
+            <CustomButton
+              onClick={() => navigate("/login")}
+              text={"Chat with Monito"}
+              icon={"message"}
+              transparent
+            />
+          )}
         </div>
       </div>
       <div className="share-container">
