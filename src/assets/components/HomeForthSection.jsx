@@ -39,7 +39,7 @@ const Wrapper = styled.section`
 `;
 const HomeForthSection = () => {
   const product = products[0];
-  //   console.log(product);
+
   return (
     <Wrapper>
       <div className="info-wrapper">
@@ -50,7 +50,6 @@ const HomeForthSection = () => {
         <CustomButton text={"View more"} icon={"arrow"} transparent />
       </div>
       <div className="dogs-grid">
-        {/* <ProductWrapper {...product} /> */}
         {products.map((product, index) => {
           return <ProductWrapper key={index} {...product} />;
         })}

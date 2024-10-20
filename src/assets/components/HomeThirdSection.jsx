@@ -81,7 +81,7 @@ const HomeThirdSection = () => {
   return (
     <Wrapper>
       <img src={owner} alt="dog and its owner" className="owner" />
-      {/* <img src={recYellow} alt="dog and its owner" className="blue-rec" /> */}
+
       <div className="text-wrapper">
         <h1>One more friend</h1>
         <h2>Thousands more fun!</h2>

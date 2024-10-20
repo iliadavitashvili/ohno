@@ -9,12 +9,12 @@ const Wrapper = styled.header`
   user-select: none;
 
   max-width: 100vw;
-  /* margin: 0 auto; */
+
   nav {
     background-color: #fceed5;
-    /* max-width: 100vw; */
+
     height: 100px;
-    /* margin: 0 auto; */
+
     display: flex;
     justify-content: space-between;
     padding: 0 8%;
@@ -48,7 +48,7 @@ const Wrapper = styled.header`
     color: white;
     background-color: #003459;
     display: flex;
-    /* justify-content: center; */
+
     align-items: center;
     padding: 0 20px;
     border-radius: 20px;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+
 import profileLogo from "../images/userProfile/user.png";
 import logoutLogo from "../images/userProfile/log-out.png";
 import { useHomeLayoutContext } from "../pages/HomeLayout";

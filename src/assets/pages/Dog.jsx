@@ -61,11 +61,9 @@ const Dog = () => {
   const dogLink = useCallback((id) => {
     navigate(`/${id}`);
   }, []);
-  // console.log(currentDog);
-  // const [isChatOpen, setIsChatOpen] = useState(false);
+
   const { isChatOpen, setIsChatOpen } = useHomeLayoutContext();
-  // console.log(isChatOpen);
-  // console.log(isChatOpen, "here");
+
   return (
     <Wrapper>
       <DesktopDogInfo skuId={skuId} setIsChatOpen={setIsChatOpen} />

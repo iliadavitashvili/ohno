@@ -41,7 +41,7 @@ const Wrapper = styled.div`
     margin-left: 15px;
     font-size: 16px;
   }
-  /* style={{ marginLeft: "15px", fontSize: "16px" }} */
+
   @media (max-width: 1000px) {
     box-sizing: border-box;
     width: 180px;
@@ -56,7 +56,6 @@ const Wrapper = styled.div`
       height: 169px;
     }
     .dog-info {
-      /* padding: 0 10px; */
     }
     .dog-name {
       font-size: 14px;
@@ -83,16 +82,9 @@ const Wrapper = styled.div`
 `;
 
 const DogWrapper = ({ dog, ...rest }) => {
-  //   const params = useParams();
-
-  //   console.log(dog);
   return (
     <Wrapper {...rest}>
-      <img
-        src={dog.image}
-        alt={dog.breed}
-        // onClick={() => redirect(`/${dog.sku}`)}
-      />
+      <img src={dog.image} alt={dog.breed} />
       <div className="dog-info">
         <p className="dog-name">
           MO502 - {dog.breed} {dog.color}

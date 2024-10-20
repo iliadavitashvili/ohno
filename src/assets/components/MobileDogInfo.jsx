@@ -5,17 +5,14 @@ import dogs from "../utils/dogs";
 import CustomButton from "../components/CustomButton";
 import guaranteeRed from "../images/guaranteeIcons/guaranteeRed.png";
 import guaranteeYellow from "../images/guaranteeIcons/guaranteeYellow.png";
-import fbIcon from "../images/socIcons/facebook.png";
-import instIcon from "../images/socIcons/instagram.png";
-import twiterIcon from "../images/socIcons/twitter.png";
-import youTubeIcon from "../images/socIcons/youtube.png";
+
 import shareIcon from "../images/socIcons/shareIcon.png";
 import { useHomeLayoutContext } from "../pages/HomeLayout";
 import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: flex;
-  /* max-width: 1440px; */
+
   flex-direction: column;
   box-sizing: border-box;
   max-width: 100vw;
@@ -75,9 +72,6 @@ const Wrapper = styled.div`
     justify-content: space-between;
   }
   .dog-detail-last {
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* text-align: left; */
   }
   @media (min-width: 1000px) {
     display: none;
@@ -97,7 +91,7 @@ const DesktopDogInfo = ({ skuId, setIsChatOpen }) => {
   const { user } = useHomeLayoutContext();
   const navigate = useNavigate();
   const currentDog = dogs.filter((dog) => skuId == dog.sku)[0];
-  // console.log(currentDog);
+
   return (
     <Wrapper>
       <img

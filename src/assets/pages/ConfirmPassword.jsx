@@ -41,12 +41,7 @@ const ConfirmPassword = () => {
     }
     return false;
   }
-  // console.log(
-  //   validatePasswordChange(
-  //     changePassword.password,
-  //     changePassword.confirmPassword
-  //   )
-  // );
+
   return (
     <Wrapper>
       <Form style={{ width: "320px", marginTop: "100px" }} method="post">

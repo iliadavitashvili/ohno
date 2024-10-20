@@ -100,13 +100,3 @@ const ProductsWrapper = ({
 };
 
 export default ProductsWrapper;
-
-// import React from "react";
-// import styled from "styled-components";
-
-// const Wrapper = styled.div``;
-// const ProductWrapper = ({ name, product, size, price, category, image }) => {
-//   return <Wrapper></Wrapper>;
-// };
-
-// export default ProductWrapper;

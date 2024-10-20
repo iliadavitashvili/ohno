@@ -79,7 +79,7 @@ const Chat = () => {
     JSON.parse(localStorage.getItem("chat")) || []
   );
   const [text, setText] = useState("");
-  // console.log(chat);
+
   const chatContainerRef = useRef(null);
   const now = new Date();
   const hours = now.getHours();

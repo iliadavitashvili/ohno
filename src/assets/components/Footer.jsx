@@ -184,14 +184,12 @@ const Footer = () => {
   }
   const [email, setEmail] = useState("");
   function handleChange(e) {
-    // console.log("22");
-
     setEmail(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log("11");
+
     if (validateEmail(email) == true) {
       setEmail("");
       toast.success(`${email} subscribed!`, { closeOnClick: true });
@@ -233,7 +231,7 @@ const Footer = () => {
             >
               Home
             </NavLink>
-            {/* <li>Home</li> */}
+
             <NavLink
               to={"/category/1"}
               activeclassname="active"
@@ -241,9 +239,9 @@ const Footer = () => {
             >
               Category
             </NavLink>
-            {/* <li>Category</li> */}
+
             <li>About</li>
-            {/* <li>Contact</li> */}
+
             <NavLink
               to={"/contact"}
               activeclassname="active"

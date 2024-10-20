@@ -37,19 +37,16 @@ const questions = {
   ],
 };
 
-// Function to get a random news item
 export function getRandomNews() {
   const randomIndex = Math.floor(Math.random() * questions.news.length);
   return questions.news[randomIndex];
 }
 
-// Function to get a random pricing item
 export function getRandomPricing() {
   const randomIndex = Math.floor(Math.random() * questions.pricing.length);
   return questions.pricing[randomIndex];
 }
 
-// Function to get a random FAQ item
 export function getRandomFAQ() {
   const randomIndex = Math.floor(Math.random() * questions.faq.length);
   return questions.faq[randomIndex];

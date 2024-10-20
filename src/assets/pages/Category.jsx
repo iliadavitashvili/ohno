@@ -68,7 +68,7 @@ const Wrapper = styled.section`
   }
   .dogs-container {
     width: 1200px;
-    /* margin-left: 100px; */
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -146,8 +146,6 @@ const Wrapper = styled.section`
       height: unset;
     }
     .filter {
-      /* position: absolute; */
-      /* display: none; */
       padding-left: 10px;
       background-color: #fceed5;
       box-shadow: 2px 2px 2px 2px gray;
@@ -231,7 +229,7 @@ const Section = styled.section`
     p {
       color: rgb(0, 52, 89);
       font-weight: bold;
-      /* text-align: left; */
+
       align-self: flex-start;
       padding: 10px;
     }
@@ -268,12 +266,11 @@ const Section = styled.section`
   }
 `;
 const Category = () => {
-  // console.log();
   const [isMobileFilter, setIsMobileFilter] = useState(
     window.innerWidth < 1000 ? false : true
   );
   const [newDogsArray, setNewDogsArray] = useState(dogs);
-  const [filteredDogs, setFilteredDogs] = useState(dogs); // New state for filtered dogs
+  const [filteredDogs, setFilteredDogs] = useState(dogs);
   const [filterData, setFilterData] = useState({
     gender: { male: false, female: false },
     color: {
@@ -515,14 +512,12 @@ const Category = () => {
               <p className="filter-names">Price</p>
               <div className="price-inputs-div">
                 <input
-                  //   onChange={onFilterChange}
                   className="price-input"
                   type="number"
                   placeholder="MIN"
                   min={400}
                 />
                 <input
-                  //   onChange={onFilterChange}
                   className="price-input"
                   type="number"
                   placeholder="MAX"

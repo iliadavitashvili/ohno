@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import dogs from "../utils/dogs";
 import HomeSliderSlide from "./HomeSliderSlide";
 const Wrapper = styled.section`
-  /* background-color: red; */
   position: relative;
   max-width: 1400px;
   padding-left: 100px;
@@ -75,7 +74,6 @@ const HomeSeventhSection = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          //   dots: true,
         },
       },
     ],
@@ -91,24 +89,6 @@ const HomeSeventhSection = () => {
         {dogs.map((dog, index) => {
           return <HomeSliderSlide key={index} image={dog.image} />;
         })}
-        {/* <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div> */}
       </Slider>
     </Wrapper>
   );

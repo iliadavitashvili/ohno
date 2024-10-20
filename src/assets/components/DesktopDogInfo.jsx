@@ -51,7 +51,6 @@ const Wrapper = styled.div`
   }
   .current-dog-image {
     border-radius: 15px;
-    /* maxwidth: 80%; */
   }
   .share-container {
     img {
@@ -88,7 +87,7 @@ const DesktopDogInfo = ({ skuId, setIsChatOpen }) => {
   const currentDog = dogs.filter((dog) => skuId == dog.sku)[0];
   const { user } = useHomeLayoutContext();
   const navigate = useNavigate();
-  // console.log(user);
+
   return (
     <Wrapper>
       {/* <div className="dog-info"> */}

@@ -11,7 +11,7 @@ import styled from "styled-components";
 const Wrapper = styled.section`
   max-width: 1240px;
   margin: 40px auto;
-  /* overflow: hidden; */
+
   align-items: center;
   > h2 {
     margin-left: 20px;

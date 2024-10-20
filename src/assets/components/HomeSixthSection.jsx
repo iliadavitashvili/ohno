@@ -67,7 +67,7 @@ const HomeSixthSection = () => {
   return (
     <Wrapper>
       <img src={handShakeImage} alt="dog and its owner" className="owner" />
-      {/* <img src={recYellow} alt="dog and its owner" className="blue-rec" /> */}
+
       <div className="text-wrapper">
         <h1>
           Adoption <img src={paw} alt="paw iamge" />

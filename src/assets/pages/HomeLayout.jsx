@@ -13,16 +13,13 @@ const HomeLayout = () => {
   );
   const [ShowUserProfile, setShowUserProfile] = useState(false);
   useEffect(() => {
-    // Function to update the user state when the custom event is triggered
     const handleUserUpdate = () => {
       const updatedUser = JSON.parse(localStorage.getItem("user"));
       setUser(updatedUser);
     };
 
-    // Listen for the custom 'userUpdated' event
     window.addEventListener("userUpdated", handleUserUpdate);
 
-    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener("userUpdated", handleUserUpdate);
     };
@@ -31,7 +28,7 @@ const HomeLayout = () => {
   const [lang, setLang] = useState(
     JSON.parse(localStorage.getItem("lang")) || "ENG"
   );
-  // console.log("lang from homeLayout");
+
   return (
     <HomeLayoutContext.Provider
       value={{

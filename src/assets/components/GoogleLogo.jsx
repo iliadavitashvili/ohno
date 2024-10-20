@@ -2,7 +2,7 @@ import styled from "styled-components";
 import gLogo from "../images/google.png";
 const Wrapper = styled.div`
   width: 320px;
-  /* height: 44px; */
+
   .gLogo-wrapper {
     display: flex;
     min-width: 320px;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   .or span {
     width: 40%;
     height: 1px;
-    /* background-color: black; */
+
     border-bottom: 1px solid black;
   }
 `;

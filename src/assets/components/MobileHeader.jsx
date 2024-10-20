@@ -19,15 +19,11 @@ const Wrapper = styled.header`
     align-items: center;
   }
   nav ul {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
   }
   nav ul li {
     list-style-type: none;
     color: #103559;
     font-weight: bold;
-    /* margin-left: 5vw; */
   }
   .header-logo-under-text {
     color: #103559;
@@ -202,43 +198,6 @@ const MobileHeader = () => {
             </div>
           </div>
         )}
-        {/* <ul className="left-hand">
-          <div className="header-logo-container">
-            <img src={logo} />
-            <span className="header-logo-under-text">Pets for Best</span>
-          </div>
-          <li onClick={() => navigate("/")}>
-            {isLanguageEnglish ? "Home" : "კატეგორია"}
-          </li>
-          <li>{isLanguageEnglish ? "Category" : "კატეგორია"}</li>
-          <li>{isLanguageEnglish ? "Contact" : "კონტაქტი"}</li>
-        </ul>
-        <ul>
-          {user?.login ? (
-            <>
-              <li
-                id="user"
-                style={{ backgroundColor: "white" }}
-                onClick={() => {
-                  setShowUserProfile((prev) => !prev);
-                }}
-              >
-                {user.name}
-              </li>
-              {ShowUserProfile && <UserProfile />}
-            </>
-          ) : (
-            <li
-              className="join-the-community"
-              onClick={() => navigate("/register")}
-            >
-              <JoinCommunity langEng={isLanguageEnglish} />
-            </li>
-          )}
-          <li onClick={languageChange} style={{ cursor: "pointer" }}>
-            {isLanguageEnglish ? "GEO/ქარ" : "ENG/ინგ"}
-          </li>
-        </ul> */}
       </nav>
     </Wrapper>
   );
