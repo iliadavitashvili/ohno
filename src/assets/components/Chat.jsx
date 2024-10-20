@@ -73,13 +73,13 @@ const Wrapper = styled.section`
 `;
 
 const Chat = () => {
-  const { isChatOpen, setIsChatOpen } = useHomeLayoutContext();
+  const { setIsChatOpen } = useHomeLayoutContext();
   const isFirstLoad = useRef(true);
   const [chat, setChat] = useState(
     JSON.parse(localStorage.getItem("chat")) || []
   );
   const [text, setText] = useState("");
-  console.log(chat);
+  // console.log(chat);
   const chatContainerRef = useRef(null);
   const now = new Date();
   const hours = now.getHours();

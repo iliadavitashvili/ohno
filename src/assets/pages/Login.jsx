@@ -59,19 +59,18 @@ const Login = () => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   }
-
   function validateInputs(user, localUser) {
     if (
       user?.email === localUser.email &&
-      user?.password === localUser.password
+      user?.password === localUser.password &&
+      user?.email !== ""
     ) {
       return true;
     } else {
       return false;
     }
   }
-  // console.log(validateInputs(user, localUser));
-  // console.log(user.email, "< user", localUser.email, " <localuser");
+
   return (
     <Wrapper>
       <GoogleLogo />

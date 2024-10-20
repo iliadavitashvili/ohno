@@ -61,6 +61,9 @@ const Wrapper = styled.header`
     border-radius: 5px;
     box-shadow: 1px 1px 1px gray;
   }
+  .lang-change {
+    margin-left: 10px;
+  }
   @media (max-width: 1000px) {
     display: none;
   }
@@ -121,7 +124,11 @@ const DesktopHeader = () => {
               <JoinCommunity langEng={isLanguageEnglish} />
             </li>
           )}
-          <li onClick={languageChange} style={{ cursor: "pointer" }}>
+          <li
+            onClick={languageChange}
+            style={{ cursor: "pointer" }}
+            className="lang-change"
+          >
             {isLanguageEnglish ? "GEO/ქარ" : "ENG/ინგ"}
           </li>
         </ul>
