@@ -8,7 +8,7 @@ const Wrapper = styled.section`
   > h2 {
     font-size: 48px;
     color: #003459;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
   }
   .counter-wrapper {
     display: grid;

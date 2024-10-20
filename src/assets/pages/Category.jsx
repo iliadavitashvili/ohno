@@ -201,12 +201,13 @@ const Section = styled.section`
   p {
     color: #fdfdfd;
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
     align-self: flex-end;
   }
   h1 {
     font-size: 54px;
     margin: 0;
+    font-family: "Gilroy-Bold", "sans-serif";
   }
   h2 {
     font-size: 36px;

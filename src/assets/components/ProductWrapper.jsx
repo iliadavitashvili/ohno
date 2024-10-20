@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   .dog-name {
     font-size: 16px;
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
   }
   span {
     color: gray;
@@ -61,7 +61,7 @@ const Wrapper = styled.div`
   }
   .gift p {
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
   }
 `;
 

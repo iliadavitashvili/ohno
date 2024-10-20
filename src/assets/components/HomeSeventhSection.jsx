@@ -32,7 +32,7 @@ const Wrapper = styled.section`
   .info-wrapper h2,
   .info-wrapper p {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
   }
   .info-wrapper h2 {
     font-size: 24px;

@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     margin-top: 10px;
     height: auto;
     width: 30%;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
   }
   h3 {
     font-weight: 100;

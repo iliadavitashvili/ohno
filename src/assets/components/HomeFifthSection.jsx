@@ -28,7 +28,7 @@ const Wrapper = styled.section`
   .info-wrapper p span {
     color: #003459;
     font-size: 24px;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
     font-weight: bold;
     margin-left: 10px;
   }

@@ -5,10 +5,12 @@ body {
 
 li {
   list-style-type: none;
+  font-family: "pro-display";
 }
 nav a {
   text-decoration: none;
   color: #01263f;
+  font-family: "pro-display";
 }
 .active {
   font-weight: bolder;
@@ -18,4 +20,5 @@ nav a {
 }
 label {
   user-select: none;
+  font-family: "pro-display";
 }

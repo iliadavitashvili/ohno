@@ -19,7 +19,7 @@ const Wrapper = styled.div`
     color: #003459;
     font-size: 20px;
     font-weight: bolder;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
   }
   .info-wrapper p {
     font-weight: bold;

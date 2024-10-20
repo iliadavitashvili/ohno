@@ -14,7 +14,7 @@ const Wrapper = styled.header`
     background-color: #fceed5;
 
     height: 100px;
-
+    font-family: "pro-display", "sans-serif";
     display: flex;
     justify-content: space-between;
     padding: 0 8%;
@@ -28,10 +28,12 @@ const Wrapper = styled.header`
   nav ul a {
     list-style-type: none;
     margin-left: 5vw;
+    font-family: "pro-display", "sans-serif";
   }
   .header-logo-under-text {
     color: #103559;
     font-size: 0.7rem;
+    font-family: "pro-display", "sans-serif";
   }
   .logo-container {
     display: flex;

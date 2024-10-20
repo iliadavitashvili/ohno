@@ -59,7 +59,7 @@ const Wrapper = styled.section`
   .close {
     position: absolute;
     font-size: 39px;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
     top: 0;
     left: 10px;
     color: white;

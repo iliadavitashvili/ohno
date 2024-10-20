@@ -1,8 +1,53 @@
+@font-face {
+  font-family: "Gilroy-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/Gilroy-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Heavy";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/Gilroy-Heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/Gilroy-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/Gilroy-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/Gilroy-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "pro-display";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/SFPRODISPLAYBOLD.OTF") format("OTF");
+}
+* {
+  /* font-family: ; */
+  font-family: "pro-display";
+}
+h1 {
+  font-family: "Gilroy-Heavy";
+}
 body {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* padding: 0; */
+
   margin: 0;
   background-color: rgb(245, 244, 244);
 }

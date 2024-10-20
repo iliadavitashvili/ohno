@@ -31,7 +31,7 @@ const Wrapper = styled.div`
     border-radius: 10px;
     color: #002a48;
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
     padding: 5px;
     display: flex;
     justify-content: center;
@@ -76,7 +76,7 @@ const Wrapper = styled.div`
   h2 {
     color: rgb(0, 52, 89);
     font-weight: bolder;
-    font-family: sans-serif;
+    font-family: "pro-display", "sans-serif";
   }
   .guarantee {
     color: rgb(0, 52, 89);

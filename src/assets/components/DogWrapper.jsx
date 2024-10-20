@@ -59,7 +59,7 @@ const Wrapper = styled.div`
     }
     .dog-name {
       font-size: 14px;
-      font-family: sans-serif;
+      font-family: "pro-display", "sans-serif";
     }
     .gender {
       display: flex;
