@@ -39,7 +39,6 @@
   src: url("./assets/fonts/SFPRODISPLAYBOLD.OTF") format("OTF");
 }
 * {
-  /* font-family: ; */
   font-family: "pro-display";
 }
 h1 {

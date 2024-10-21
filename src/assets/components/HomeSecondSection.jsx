@@ -6,7 +6,7 @@ import DogWrapper from "./DogWrapper";
 import arrowIcon from "../images/buttonIcons/arrow.png";
 import { useNavigate } from "react-router-dom";
 const Wrapper = styled.section`
-  max-width: 100vw;
+  max-width: 1440px;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 10px;
@@ -19,6 +19,8 @@ const Wrapper = styled.section`
     grid-gap: 20px;
     grid-template-columns: repeat(4, 284px);
     grid-template-rows: minmax(100px, auto);
+    /* grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-template-rows: auto; */
     justify-content: center;
   }
   .info-wrapper {

@@ -12,7 +12,7 @@ import rec6 from "../images/homeFirstSectionImages/rec6.png";
 import rec7 from "../images/homeFirstSectionImages/rec7.png";
 import rec8 from "../images/homeFirstSectionImages/rec8.png";
 const Wrapper = styled.section`
-  max-width: 100vw;
+  max-width: 100%;
 
   border-radius: 10px;
   display: flex;
@@ -55,7 +55,7 @@ const Wrapper = styled.section`
     margin-right: 10px;
   }
   .image-container {
-    max-width: 900;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     justify-content: end;
